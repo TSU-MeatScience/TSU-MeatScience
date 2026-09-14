@@ -76,3 +76,17 @@ footer {
   background-color: #e0e0e0;
   font-size: 0.9rem;
 }
+.pub-card {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.pub-photo {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #ddd;
+}
