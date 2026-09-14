@@ -1,2415 +1,464 @@
-
-
-
 /* ==========================================================================
-   TSU MEAT SCIENCE LAB
-   Consolidated Professional / Apple-Inspired Stylesheet
-   ========================================================================== */
-
-
-/* ==========================================================================
-   1. DESIGN TOKENS
+   TSU Meat Science - Unified Academic Color Palette & Marbled Background
    ========================================================================== */
 
 :root {
-
-  /* --- University / Academic Colors --- */
-
-  --primary-navy: #002147;
-  --primary-navy-dark: #00152f;
-  --primary-navy-light: #123b63;
-
-  --academic-blue: #1e4f8a;
-  --accent-blue: #2563a6;
-  --accent-blue-light: #eaf2fa;
-
-
-  /* --- Backgrounds --- */
-
-  --bg-page: #f3f5f8;
-  --bg-card: #ffffff;
-  --bg-soft: #f7f9fc;
-  --bg-blue: #eef5fb;
-
-
-  /* --- Borders --- */
-
-  --border-subtle: #dce3eb;
-  --border-blue: #c7d9eb;
-  --border-dark: #b7c5d4;
-
-
-  /* --- Typography --- */
-
-  --text-main: #1e2936;
-  --text-heading: #102a43;
-  --text-muted: #5d6b7a;
-  --text-light: #d8e4f0;
-
-
-  /* --- Status Colors --- */
-
-  --pdf-red: #a61b1b;
-  --pdf-bg: #fdf0f0;
-
-  --doi-blue: #1d4ed8;
-  --doi-bg: #eff6ff;
-
-  --slides-purple: #6b21a8;
-  --slides-bg: #faf5ff;
-
-
-  /* --- Effects --- */
-
-  --shadow-sm:
-    0 1px 3px rgba(0, 33, 71, 0.06);
-
-  --shadow-card:
-    0 4px 14px rgba(0, 33, 71, 0.07);
-
-  --shadow-hover:
-    0 8px 24px rgba(0, 33, 71, 0.12);
-
-  --shadow-header:
-    0 2px 12px rgba(0, 20, 45, 0.08);
-
-  --shadow-header-scrolled:
-    0 8px 30px rgba(0, 20, 45, 0.18);
-
-
-  /* --- Radius --- */
-
-  --radius-sm: 5px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-
-
-  /* --- Layout --- */
-
-  --content-width: 1050px;
-
-  /*
-   * Slightly taller initial header gives the TSU logo
-   * enough breathing room.
-   */
-  --header-height: 76px;
+  --bg-page: #f2f4f8;             /* Light Gray base */
+  --bg-card: #ffffff;             /* Crisp white container/card background */
+  --bg-light-blue: #eef5fc;       /* Light blue banner/card accent */
+  --border-light-blue: #cbdff5;   /* Light blue border outline */
+  
+  --primary-navy: #002147;        /* TSU Deep Navy Blue */
+  --accent-blue: #1d4ed8;         /* Interactive Academic Blue */
+  --text-main: #1e293b;           /* High-contrast charcoal text */
+  --text-muted: #64748b;          /* Muted slate text for dates/authors */
+  --border-subtle: #e2e8f0;       /* Subtle dividers */
+  --shadow-card: 0 4px 12px rgba(0, 33, 71, 0.05);
 }
 
-
-/* ==========================================================================
-   2. RESET
-   ========================================================================== */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 100px;
-}
-
-
+/* --- Global Page Setup with Translucent Blue Meat Marbling Pattern --- */
+/* --- Global Page Setup: High-Precision Scientific Meat Marbling (BMS-Style) --- */
 body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   margin: 0;
-
   color: var(--text-main);
-
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "SF Pro Text",
-    "SF Pro Display",
-    "Segoe UI",
-    Arial,
-    sans-serif;
-
-  font-size: 16px;
-  line-height: 1.65;
-
+  line-height: 1.6;
   background-color: var(--bg-page);
 
-  background-image:
-    radial-gradient(
-      circle at 15% 20%,
-      rgba(203, 223, 245, 0.45) 0,
-      transparent 40%
-    ),
-    radial-gradient(
-      circle at 85% 80%,
-      rgba(219, 234, 254, 0.40) 0,
-      transparent 42%
-    );
-
-  background-repeat: no-repeat;
-  background-attachment: scroll;
+  /* Layer 1 & 2: Soft ambient tissue glows */
+  /* Layer 3: High-resolution feathery intramuscular fat branching & micro-flecks */
+  background-image: 
+    radial-gradient(circle at 18% 22%, rgba(203, 223, 245, 0.55) 0%, transparent 42%),
+    radial-gradient(circle at 82% 78%, rgba(219, 234, 254, 0.50) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E%3Cdefs%3E%3ClinearGradient id='marb' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='rgba(147, 197, 253, 0.40)'/%3E%3Cstop offset='100%25' stop-color='rgba(96, 165, 250, 0.15)'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg stroke='url(%23marb)' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- Primary Feathery Intramuscular Branches (Parallel to Grain) --%3E%3Cpath d='M20,60 C60,40 110,75 160,50 C185,38 210,55 240,45' stroke-width='1.8'/%3E%3Cpath d='M90,58 C115,42 135,62 150,53' stroke-width='1.1'/%3E%3Cpath d='M160,50 C180,68 205,62 225,75' stroke-width='1.0'/%3E%3Cpath d='M310,120 C350,95 400,130 450,110 C475,100 490,115 510,105' stroke-width='2.0'/%3E%3Cpath d='M370,112 C395,95 420,118 440,108' stroke-width='1.2'/%3E%3Cpath d='M50,280 C100,250 160,295 220,265 C260,245 290,270 330,255' stroke-width='2.2'/%3E%3Cpath d='M130,273 C160,252 185,278 205,268' stroke-width='1.3'/%3E%3Cpath d='M220,265 C245,285 270,278 290,295' stroke-width='1.1'/%3E%3Cpath d='M180,410 C220,385 270,420 320,398 C360,380 395,405 440,390' stroke-width='1.9'/%3E%3Cpath d='M250,405 C278,388 300,410 320,400' stroke-width='1.0'/%3E%3C/g%3E%3C!-- Secondary High-Precision Micro-Flecks & Spatial Lipid Clusters --%3E%3Cg fill='rgba(147, 197, 253, 0.35)'%3E%3Cpath d='M65,48 C78,44 85,52 72,55 Z'/%3E%3Cpath d='M175,44 C190,39 198,48 182,51 Z'/%3E%3Cpath d='M340,108 C358,100 368,112 350,116 Z'/%3E%3Cpath d='M110,268 C128,258 138,272 120,275 Z'/%3E%3Cpath d='M250,258 C268,248 278,262 260,265 Z'/%3E%3Cpath d='M230,398 C248,388 258,402 240,405 Z'/%3E%3Cpath d='M360,392 C378,382 388,396 370,399 Z'/%3E%3C!-- Micro-droplet histology dots --%3E%3Ccircle cx='42' cy='62' r='1.5'/%3E%3Ccircle cx='142' cy='56' r='1.8'/%3E%3Ccircle cx='325' cy='124' r='1.6'/%3E%3Ccircle cx='425' cy='114' r='1.4'/%3E%3Ccircle cx='82' cy='282' r='2.0'/%3E%3Ccircle cx='192' cy='272' r='1.5'/%3E%3Ccircle cx='302' cy='262' r='1.7'/%3E%3Ccircle cx='212' cy='412' r='1.6'/%3E%3Ccircle cx='338' cy='402' r='1.8'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-repeat: repeat;
 }
 
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-
-a {
-  color: inherit;
-}
-
-
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-
-/* ==========================================================================
-   3. TYPOGRAPHY
-   ========================================================================== */
-
-h1,
-h2,
-h3 {
-  color: var(--text-heading);
-}
-
-
-h2,
-h3 {
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-}
-
-
-h2 {
-  margin: 0 0 0.8rem;
-
-  font-size: clamp(1.65rem, 3vw, 2.15rem);
-  line-height: 1.25;
-}
-
-
-h3 {
-  margin: 0 0 0.45rem;
-
-  font-size: 1.2rem;
-  line-height: 1.35;
-}
-
-
-p {
-  margin-top: 0;
-}
-
-
-.lead {
-  max-width: 760px;
-
-  margin: 0;
-
-  color: #46576a;
-
-  font-size: 1.08rem;
-  line-height: 1.75;
-}
-
-
-/* ==========================================================================
-   4. HEADER
-   ========================================================================== */
-
-/*
- * Initial state:
- *
- * Slight transparency + blur gives the header a refined,
- * Apple-inspired appearance.
- *
- * The background is still strongly navy so the TSU identity
- * remains obvious.
- */
-
-/* ==========================================================================
-   TSU HEADER — CLEAN / APPLE-INSPIRED VERSION
-   ========================================================================== */
-
-/* --------------------------------------------------------------------------
-   HEADER
-   -------------------------------------------------------------------------- */
-
+/* --- Header & Navigation --- */
+/* --- Apple-Style Translucent Sticky Header --- */
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
-
-  width: 100%;
-
-  /*
-   * IMPORTANT:
-   * Keep the background genuinely transparent enough
-   * for the page behind it to be visible.
-   */
-  background-color: rgba(0, 33, 71, 0.68);
-
-  /*
-   * Frosted-glass effect.
-   * The fallback background above still works if unsupported.
-   */
-  -webkit-backdrop-filter: saturate(180%) blur(18px);
-  backdrop-filter: saturate(180%) blur(18px);
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-
-  box-shadow:
-    0 2px 12px rgba(0, 20, 45, 0.08);
-
-  transition:
-    background-color 0.4s ease,
-    box-shadow 0.4s ease,
-    border-color 0.4s ease;
+  
+  /* Translucent Dark Blue (Primary Navy at ~82% Opacity) */
+  background-color: rgba(15, 34, 64, 0.82); 
+  
+  /* Apple Frosted-Glass Backdrop Blur */
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  
+  /* Subtle bottom border to define edge against page content */
+  border-bottom: 1px solid rgba(203, 223, 245, 0.18);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  
+  /* Smooth interaction transition */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-/*
- * TOP OF PAGE
- *
- * More transparent.
- */
-header:not(.scrolled) {
-  background-color: rgba(0, 33, 71, 0.58);
-
-  box-shadow:
-    0 1px 8px rgba(0, 20, 45, 0.06);
+/* Optional: Enhances tab contrast over blurred content */
+header nav ul li a {
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-
-/*
- * AFTER SCROLLING
- *
- * Noticeably more opaque.
- */
-header.scrolled {
-  background-color: rgba(0, 33, 71, 0.96);
-
-  border-bottom-color:
-    rgba(255, 255, 255, 0.20);
-
-  box-shadow:
-    0 8px 28px rgba(0, 20, 45, 0.22);
+header nav ul li a:hover {
+  background-color: rgba(203, 223, 245, 0.15);
+  border-radius: 4px;
 }
-
-
-/* --------------------------------------------------------------------------
-   HEADER INNER
-   -------------------------------------------------------------------------- */
-
-.header-inner {
-
-  /*
-   * Wider than the main content.
-   *
-   * This prevents the logo and tabs from feeling crowded.
-   */
-  width: min(
-    calc(100% - 4rem),
-    1180px
-  );
-
-  min-height: 82px;
-
-  margin: 0 auto;
-
-  display: flex;
-  align-items: center;
-
-  /*
-   * Brand stays LEFT.
-   * Navigation gets its own comfortable space on RIGHT.
-   */
-  justify-content: flex-start;
-
-  /*
-   * Large separation between branding and navigation.
-   */
-  gap: 4rem;
-
-  transition:
-    min-height 0.4s ease;
-}
-
-
-/*
- * Header becomes visibly smaller after scrolling.
- */
-header.scrolled .header-inner {
-  min-height: 64px;
-}
-
-
-/* --------------------------------------------------------------------------
-   TSU BRAND
-   -------------------------------------------------------------------------- */
-
-.header-brand {
-
-  display: flex;
-  align-items: center;
-
-  /*
-   * IMPORTANT:
-   * Do NOT let the brand become squeezed.
-   */
-  flex: 0 0 auto;
-
-  min-width: max-content;
-
-  margin-right: auto;
-
-  gap: 1rem;
-
-  color: #ffffff;
-
-  text-decoration: none;
-
-  transition:
-    opacity 0.25s ease;
-}
-
-
-.header-brand:hover {
-  opacity: 0.94;
-}
-
-
-/* --------------------------------------------------------------------------
-   TSU LOGO
-   -------------------------------------------------------------------------- */
 
 .logo {
-
-  display: block;
-
-  /*
-   * Larger initial logo.
-   */
-  width: auto;
-  height: 50px;
-
-  max-width: 145px;
-
-  object-fit: contain;
-
-  flex-shrink: 0;
-
-  transition:
-    height 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    max-width 0.4s ease;
+  height: 60px;
 }
-
-
-/*
- * Noticeable shrink when scrolling.
- */
-header.scrolled .logo {
-  height: 37px;
-  max-width: 115px;
-}
-
-
-/* --------------------------------------------------------------------------
-   BRAND DIVIDER
-   -------------------------------------------------------------------------- */
-
-.brand-divider {
-
-  width: 1px;
-  height: 40px;
-
-  flex-shrink: 0;
-
-  background:
-    rgba(255, 255, 255, 0.30);
-
-  transition:
-    height 0.4s ease,
-    opacity 0.4s ease;
-}
-
-
-header.scrolled .brand-divider {
-  height: 29px;
-  opacity: 0.70;
-}
-
-
-/* --------------------------------------------------------------------------
-   MEAT LAB TEXT
-   -------------------------------------------------------------------------- */
-
-.header-brand-text {
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  min-width: max-content;
-
-  padding-right: 0.5rem;
-}
-
-
-header h1 {
-
-  margin: 0;
-
-  color: #ffffff;
-
-  /*
-   * Use a clean sans-serif for the header.
-   * This feels more modern / Apple-like.
-   */
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "SF Pro Display",
-    "Segoe UI",
-    Arial,
-    sans-serif;
-
-  font-size: 1.22rem;
-
-  font-weight: 650;
-
-  line-height: 1.15;
-
-  letter-spacing: -0.015em;
-
-  white-space: nowrap;
-
-  transition:
-    font-size 0.4s ease;
-}
-
-
-header.scrolled h1 {
-  font-size: 1.04rem;
-}
-
-
-.header-brand-text span {
-
-  display: block;
-
-  margin-top: 5px;
-
-  color:
-    rgba(222, 233, 244, 0.78);
-
-  font-size: 0.64rem;
-
-  font-weight: 600;
-
-  line-height: 1.2;
-
-  letter-spacing: 0.08em;
-
-  text-transform: uppercase;
-
-  white-space: nowrap;
-}
-
-
-/* --------------------------------------------------------------------------
-   NAVIGATION
-   -------------------------------------------------------------------------- */
-
-nav {
-
-  /*
-   * No auto margin here.
-   *
-   * .header-brand handles the available space.
-   */
-  flex: 0 0 auto;
-
-  margin-left: 0;
-}
-
 
 nav ul {
-
-  display: flex;
-  align-items: center;
-
-  /*
-   * More breathing room between tabs.
-   */
-  gap: 0.35rem;
-
-  margin: 0;
-  padding: 0;
-
   list-style: none;
+  padding: 0;
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1.5rem;
 }
-
 
 nav a {
-
-  position: relative;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 40px;
-
-  /*
-   * More horizontal padding.
-   */
-  padding:
-    0.45rem
-    0.85rem;
-
-  color:
-    rgba(235, 243, 250, 0.78);
-
+  color: #cfe2ff;
   text-decoration: none;
-
-  font-size: 0.80rem;
-
   font-weight: 600;
-
-  letter-spacing: -0.005em;
-
-  border-radius: 8px;
-
-  transition:
-    color 0.2s ease,
-    background-color 0.2s ease,
-    transform 0.2s ease;
+  transition: color 0.2s ease;
 }
-
 
 nav a:hover {
-
   color: #ffffff;
-
-  background:
-    rgba(255, 255, 255, 0.10);
-
-  transform: translateY(-1px);
+  text-decoration: underline;
 }
 
-
-nav a:focus-visible {
-
-  outline:
-    2px solid #93c5fd;
-
-  outline-offset: 3px;
-}
-
-
-/* --------------------------------------------------------------------------
-   ACTIVE TAB
-   -------------------------------------------------------------------------- */
-
-nav a.active {
-
-  color: #ffffff;
-
-  background:
-    rgba(255, 255, 255, 0.11);
-
-  box-shadow:
-    inset 0 0 0 1px
-    rgba(255, 255, 255, 0.05);
-}
-
-
-nav a.active::after {
-
-  content: "";
-
-  position: absolute;
-
-  left: 50%;
-  bottom: 5px;
-
-  width: 18px;
-  height: 2px;
-
-  background: #9ac5ed;
-
-  border-radius: 999px;
-
-  transform:
-    translateX(-50%);
-}
-
-
-/* ==========================================================================
-   TABLET
-   ========================================================================== */
-
-@media (max-width: 1000px) {
-
-  .header-inner {
-
-    width:
-      calc(100% - 2.5rem);
-
-    gap: 2rem;
-  }
-
-
-  nav ul {
-    gap: 0.15rem;
-  }
-
-
-  nav a {
-
-    padding:
-      0.4rem
-      0.55rem;
-
-    font-size: 0.74rem;
-  }
-
-}
-
-
-/* ==========================================================================
-   MOBILE / SMALL TABLET
-   ========================================================================== */
-
-@media (max-width: 760px) {
-
-  header {
-    background-color:
-      rgba(0, 33, 71, 0.94);
-
-    -webkit-backdrop-filter:
-      saturate(150%) blur(14px);
-
-    backdrop-filter:
-      saturate(150%) blur(14px);
-  }
-
-
-  header:not(.scrolled) {
-    background-color:
-      rgba(0, 33, 71, 0.88);
-  }
-
-
-  .header-inner {
-
-    width:
-      calc(100% - 1.5rem);
-
-    min-height: 0;
-
-    padding:
-      0.7rem
-      0;
-
-    display: grid;
-
-    grid-template-columns: 1fr;
-
-    gap: 0.65rem;
-  }
-
-
-  header.scrolled .header-inner {
-    min-height: 0;
-  }
-
-
-  .header-brand {
-
-    width: 100%;
-
-    margin-right: 0;
-
-    gap: 0.75rem;
-  }
-
-
-  .logo {
-
-    height: 40px;
-
-    max-width: 105px;
-  }
-
-
-  header.scrolled .logo {
-
-    height: 32px;
-
-    max-width: 88px;
-  }
-
-
-  .brand-divider {
-
-    height: 32px;
-  }
-
-
-  header.scrolled .brand-divider {
-
-    height: 25px;
-  }
-
-
-  header h1 {
-    font-size: 1rem;
-  }
-
-
-  header.scrolled h1 {
-    font-size: 0.92rem;
-  }
-
-
-  /*
-   * Tabs become a clean horizontal row.
-   */
-  nav {
-
-    width: 100%;
-
-    overflow-x: auto;
-
-    scrollbar-width: none;
-  }
-
-
-  nav::-webkit-scrollbar {
-    display: none;
-  }
-
-
-  nav ul {
-
-    width: max-content;
-
-    justify-content: flex-start;
-
-    gap: 0.15rem;
-  }
-
-
-  nav a {
-
-    min-height: 34px;
-
-    padding:
-      0.3rem
-      0.65rem;
-
-    font-size: 0.72rem;
-  }
-
-}
-
-
-/* ==========================================================================
-   SMALL MOBILE
-   ========================================================================== */
-
-@media (max-width: 560px) {
-
-  .header-inner {
-
-    width:
-      calc(100% - 1rem);
-
-    padding:
-      0.6rem
-      0;
-  }
-
-
-  .logo {
-
-    height: 36px;
-
-    max-width: 92px;
-  }
-
-
-  header.scrolled .logo {
-
-    height: 29px;
-
-    max-width: 78px;
-  }
-
-
-  .brand-divider {
-
-    height: 29px;
-  }
-
-
-  header.scrolled .brand-divider {
-
-    height: 23px;
-  }
-
-
-  header h1 {
-
-    font-size: 0.94rem;
-  }
-
-
-  header.scrolled h1 {
-
-    font-size: 0.87rem;
-  }
-
-
-  /*
-   * Hide the university subtitle on very small screens
-   * to prevent crowding.
-   */
-  .header-brand-text span {
-    display: none;
-  }
-
-
-  nav a {
-
-    min-height: 32px;
-
-    padding:
-      0.25rem
-      0.5rem;
-
-    font-size: 0.67rem;
-  }
-
-
-  nav a.active::after {
-
-    bottom: 3px;
-
-    width: 14px;
-  }
-
-}
-
-
-/* ==========================================================================
-   REDUCED MOTION
-   ========================================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-  * {
-    transition-duration: 0.01ms !important;
-  }
-
-}
-
-The important change
-
-Your previous layout effectively had:
-
-[ TSU LOGO | Meat Lab ]        [tabs]
-
-
-but because everything was constrained to 1050px, the available space became tight.
-
-This version deliberately gives the header 1180px:
-
-width: min(
-  calc(100% - 4rem),
-  1180px
-);
-
-
-and uses:
-
-gap: 4rem;
-
-
-while also making the brand itself consume the available left-side space:
-
-.header-brand {
-  margin-right: auto;
-}
-
-
-So on a desktop display you'll get much more like:
-
-┌──────────────────────────────────────────────────────────────────────────┐
-│                                                                          │
-│  [TSU] │ TSU MEAT SCIENCE LAB                         About  Research ...│
-│                                                                          │
-└──────────────────────────────────────────────────────────────────────────┘
-
-
-rather than:
-
-[TSU]│Lab                  About Research Team Publications Posters Support
-
-Why the transparency should now actually be visible
-
-I changed the top state to:
-
-header:not(.scrolled) {
-    background-color: rgba(0, 33, 71, 0.58);
-}
-
-
-and the scrolled state to:
-
-header.scrolled {
-    background-color: rgba(0, 33, 71, 0.96);
-}
-
-
-That's a 38 percentage-point difference, rather than a subtle 5–15 point change.
-
-The transition is:
-
-TOP
-████████████████████░░░░
-58% navy
-↓
-scroll
-████████████████████████
-96% navy
-
-
-The logo also goes from:
-
-50px → 37px
-
-
-so the size change should be much easier to perceive.
-
-One caveat: transparency cannot be visually apparent if there is nothing contrasting behind the header. Your current body background is very pale, so the difference will be most noticeable around the edges/texture underneath the header. If you want the classic Apple effect where the content visibly moves underneath the header, I would make one additional change to the HTML/layout: put the hero/content immediately underneath the sticky header and let the background texture extend behind it.
-
-/* ==========================================================================
-   6. TSU BRAND
-   ========================================================================== */
-
-.header-brand {
-  display: flex;
-  align-items: center;
-
-  /*
-   * Keeps logo + Meat Lab together on the LEFT.
-   */
-  margin-right: auto;
-
-  gap: 0.9rem;
-
-  min-width: 0;
-  flex-shrink: 0;
-
-  color: #ffffff;
-
-  text-decoration: none;
-
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
-}
-
-
-.header-brand:hover {
-  opacity: 0.96;
-}
-
-
-/* ==========================================================================
-   7. TSU LOGO
-   ========================================================================== */
-
-.logo {
-  display: block;
-
-  /*
-   * More noticeable initial size.
-   */
-  width: auto;
-  height: 46px;
-
-  max-width: 135px;
-
-  object-fit: contain;
-
-  flex-shrink: 0;
-
-  /*
-   * Noticeable size transition.
-   */
-  transition:
-    height 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-    max-width 0.35s ease;
-}
-
-
-/*
- * SCROLLED LOGO
- *
- * 46px -> 35px is intentionally obvious.
- */
-header.scrolled .logo {
-  height: 35px;
-  max-width: 112px;
-}
-
-
-/* ==========================================================================
-   8. BRAND DIVIDER
-   ========================================================================== */
-
-.brand-divider {
-  width: 1px;
-  height: 36px;
-
-  background:
-    rgba(255, 255, 255, 0.30);
-
-  flex-shrink: 0;
-
-  transition:
-    height 0.35s ease,
-    opacity 0.35s ease;
-}
-
-
-header.scrolled .brand-divider {
-  height: 28px;
-
-  opacity: 0.75;
-}
-
-
-/* ==========================================================================
-   9. MEAT SCIENCE LAB BRAND TEXT
-   ========================================================================== */
-
-.header-brand-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  min-width: 0;
-
-  /*
-   * Gives the lab name a little more breathing room.
-   */
-  padding-right: 0.25rem;
-}
-
-
-header h1 {
-  margin: 0;
-
-  color: #ffffff;
-
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "SF Pro Display",
-    "Segoe UI",
-    sans-serif;
-
-  font-size: 1.16rem;
-  font-weight: 650;
-
-  line-height: 1.15;
-
-  letter-spacing: -0.01em;
-
-  white-space: nowrap;
-
-  transition:
-    font-size 0.35s ease,
-    letter-spacing 0.35s ease;
-}
-
-
-header.scrolled h1 {
-  font-size: 1.03rem;
-}
-
-
-.header-brand-text span {
-  display: block;
-
-  margin-top: 4px;
-
-  color:
-    rgba(219, 231, 243, 0.78);
-
-  font-size: 0.63rem;
-  font-weight: 600;
-
-  line-height: 1.2;
-
-  letter-spacing: 0.075em;
-
-  text-transform: uppercase;
-
-  white-space: nowrap;
-
-  transition:
-    opacity 0.3s ease;
-}
-
-
-header.scrolled .header-brand-text span {
-  opacity: 0.70;
-}
-
-
-/* ==========================================================================
-   10. NAVIGATION
-   ========================================================================== */
-
-nav {
-  margin-left: 0;
-
-  flex-shrink: 0;
-}
-
-
-nav ul {
-  display: flex;
-  align-items: center;
-
-  gap: 0.2rem;
-
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
-}
-
-
-nav a {
-  position: relative;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 38px;
-
-  padding:
-    0.45rem
-    0.72rem;
-
-  color:
-    rgba(232, 241, 249, 0.78);
-
-  text-decoration: none;
-
-  font-size: 0.80rem;
-  font-weight: 600;
-
-  border-radius: 7px;
-
-  transition:
-    color 0.2s ease,
-    background-color 0.2s ease,
-    transform 0.2s ease;
-}
-
-
-/*
- * Apple-style subtle navigation hover.
- */
-nav a:hover {
-  color: #ffffff;
-
-  background:
-    rgba(255, 255, 255, 0.09);
-
-  transform: translateY(-1px);
-}
-
-
-nav a:focus-visible {
-  outline: 2px solid #93c5fd;
-  outline-offset: 3px;
-}
-
-
-/*
- * Active tab:
- * More subtle than a traditional button.
- */
-nav a.active {
-  color: #ffffff;
-
-  background:
-    rgba(255, 255, 255, 0.12);
-
-  box-shadow:
-    inset 0 0 0 1px
-    rgba(255, 255, 255, 0.06);
-}
-
-
-/*
- * Small active indicator.
- */
-nav a.active::after {
-  content: "";
-
-  position: absolute;
-
-  left: 50%;
-  bottom: 4px;
-
-  width: 18px;
-  height: 2px;
-
-  background: #9ac5ed;
-
-  border-radius: 999px;
-
-  transform:
-    translateX(-50%);
-}
-
-
-/* ==========================================================================
-   11. MAIN CONTAINER
-   ========================================================================== */
-
+/* --- Main Layout Container --- */
 main {
-  width: min(
-    calc(100% - 2rem),
-    var(--content-width)
-  );
-
-  margin: 2rem auto 3rem;
-
+  background: var(--bg-card);
+  max-width: 950px;
+  margin: 2rem auto;
   padding: 2.5rem;
-
-  background:
-    rgba(255, 255, 255, 0.98);
-
-  border:
-    1px solid var(--border-subtle);
-
-  border-radius: var(--radius-md);
-
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-card);
 }
 
-
-/* ==========================================================================
-   12. HERO
-   ========================================================================== */
-
-.hero-section {
-  padding-bottom: 2rem;
-
-  border-bottom:
-    1px solid var(--border-subtle);
-}
-
-
-.section-label,
-.section-kicker {
-  display: inline-block;
-
-  margin-bottom: 0.45rem;
-
-  color: var(--academic-blue);
-
-  font-size: 0.7rem;
-  font-weight: 700;
-
-  letter-spacing: 0.11em;
-
-  text-transform: uppercase;
-}
-
-
-.hero-section h2 {
-  margin-bottom: 0.7rem;
-
-  font-size:
-    clamp(2rem, 4vw, 2.75rem);
-
-  color: var(--primary-navy);
-}
-
-
-/* ==========================================================================
-   13. CONTENT SECTIONS
-   ========================================================================== */
-
-.content-section {
-  padding: 2.4rem 0;
-
-  border-bottom:
-    1px solid var(--border-subtle);
-}
-
-
-.content-section:last-of-type {
-  border-bottom: none;
-}
-
-
-.section-heading {
-  margin-bottom: 1.25rem;
-}
-
-
-.section-heading h2 {
-  margin-bottom: 0;
-}
-
-
-.section-heading::after {
-  content: "";
-
-  display: block;
-
-  width: 42px;
-  height: 3px;
-
-  margin-top: 0.7rem;
-
-  background: var(--academic-blue);
-
-  border-radius: 2px;
-}
-
-
-/* ==========================================================================
-   14. RESEARCH CARDS
-   ========================================================================== */
-
-.research-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: 1rem;
-
-  margin-top: 1.5rem;
-}
-
-
-.research-card {
-  position: relative;
-
-  padding: 1.35rem;
-
-  background: var(--bg-soft);
-
-  border:
-    1px solid var(--border-subtle);
-
-  border-top:
-    3px solid var(--primary-navy);
-
-  border-radius: var(--radius-md);
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
-}
-
-
-.research-card:hover {
-  transform: translateY(-3px);
-
-  box-shadow: var(--shadow-hover);
-}
-
-
-.research-card h3 {
-  color: var(--primary-navy);
-}
-
-
-.research-card p {
-  margin-bottom: 0;
-
-  color: var(--text-muted);
-
-  font-size: 0.9rem;
-}
-
-
-.research-number {
-  margin-bottom: 0.5rem;
-
-  color: var(--academic-blue);
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-
-
-/* ==========================================================================
-   15. LAB PHOTO
-   ========================================================================== */
-
-.photo-box {
-  margin-top: 1.25rem;
-
-  text-align: center;
-}
-
-
-.lab-photo {
-  display: block;
-
-  width: 100%;
-  max-width: 760px;
-
-  margin: 0 auto;
-
-  border:
-    1px solid var(--border-subtle);
-
-  border-radius: var(--radius-md);
-
-  box-shadow: var(--shadow-sm);
-}
-
-
-.photo-caption {
-  max-width: 760px;
-
-  margin: 0.65rem auto 0;
-
-  color: var(--text-muted);
-
-  font-size: 0.82rem;
-  font-style: italic;
-}
-
-
-/* ==========================================================================
-   16. MEMBER CARD
-   ========================================================================== */
-
+/* --- Member & Lab Profile Cards --- */
 .member-card {
   display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
   align-items: center;
-
-  gap: 1.25rem;
-
-  padding: 1.25rem;
-
-  background: var(--bg-blue);
-
-  border:
-    1px solid var(--border-blue);
-
-  border-radius: var(--radius-md);
+  padding: 1rem;
+  background-color: var(--bg-light-blue);
+  border: 1px solid var(--border-light-blue);
+  border-radius: 8px;
 }
-
 
 .member-photo {
   width: 120px;
   height: 120px;
-
-  flex-shrink: 0;
-
   object-fit: cover;
-
-  background: #d7dee7;
-
-  border:
-    3px solid #ffffff;
-
-  border-radius: var(--radius-md);
-
-  box-shadow: var(--shadow-sm);
+  border-radius: 8px;
+  background-color: #cbd5e1;
+  border: 2px solid #ffffff;
 }
 
-
-.member-info h3 {
-  color: var(--primary-navy);
+.lab-photo {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
 }
 
-
-.member-info p {
-  margin-bottom: 0.45rem;
-
-  color: var(--text-muted);
+.photo-box {
+  text-align: center;
+  margin-top: 1rem;
 }
 
-
-.member-info .member-role {
-  color: var(--academic-blue);
-
-  font-size: 0.85rem;
-  font-weight: 700;
+/* --- Publication Section Cards --- */
+.pub-card {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--bg-light-blue);
+  border: 1px solid var(--border-light-blue);
+  border-radius: 8px;
 }
 
-
-/* ==========================================================================
-   17. PUBLICATIONS
-   ========================================================================== */
+.pub-photo {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #cbd5e1;
+}
 
 .publication-card {
-  margin-bottom: 1rem;
-
-  padding: 1.25rem 1.4rem;
-
-  background: #ffffff;
-
-  border:
-    1px solid var(--border-subtle);
-
-  border-left:
-    4px solid var(--primary-navy);
-
-  border-radius:
-    0
-    var(--radius-md)
-    var(--radius-md)
-    0;
-
-  box-shadow: var(--shadow-sm);
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    Times,
-    serif;
-
-  transition:
-    background-color 0.2s ease,
-    border-left-color 0.2s ease,
-    box-shadow 0.2s ease;
+  margin-bottom: 1.5rem;
+  padding: 1.2rem 1.5rem;
+  background-color: var(--bg-card);
+  border-left: 4px solid var(--primary-navy);
+  border-top: 1px solid var(--border-subtle);
+  border-right: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  transition: all 0.2s ease;
 }
-
 
 .publication-card:hover {
-  background: #f8fbfe;
-
-  border-left-color:
-    var(--academic-blue);
-
-  box-shadow:
-    var(--shadow-card);
+  background-color: var(--bg-light-blue);
+  border-left-color: var(--accent-blue);
+  box-shadow: 0 4px 12px rgba(0, 33, 71, 0.08);
 }
 
-
 .citation {
-  margin: 0 0 0.9rem;
-
+  margin: 0 0 0.85rem 0;
   color: var(--text-main);
-
-  font-size: 0.96rem;
-
+  font-size: 0.98rem;
   line-height: 1.65;
 }
 
-
 .authors {
+  font-weight: 600;
   color: var(--primary-navy);
-
-  font-weight: 700;
 }
-
 
 .paper-title {
-  color: var(--text-main);
-
   font-style: italic;
+  color: var(--text-main);
 }
-
 
 .venue {
   color: var(--text-muted);
 }
 
-
-/* ==========================================================================
-   18. BUTTONS / PUBLICATION BADGES
-   ========================================================================== */
-
-.pub-actions,
-.poster-actions {
-  display: flex;
-  flex-wrap: wrap;
-
-  align-items: center;
-
-  gap: 0.45rem;
-}
-
-
-.pub-badge,
-.poster-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 32px;
-
-  padding: 0.3rem 0.65rem;
-
-  border-radius: var(--radius-sm);
-
-  font-size: 0.75rem;
-  font-weight: 700;
-
-  text-decoration: none;
-
-  transition:
-    color 0.15s ease,
-    background-color 0.15s ease,
-    border-color 0.15s ease,
-    transform 0.15s ease;
-}
-
-
-.pub-badge:hover,
-.poster-btn:hover {
-  transform: translateY(-1px);
-}
-
-
-/* PDF */
-
-.pub-badge.pdf {
-  color: var(--pdf-red);
-
-  background: var(--pdf-bg);
-
-  border: 1px solid #efb4b4;
-}
-
-
-.pub-badge.pdf:hover {
-  color: #ffffff;
-
-  background: var(--pdf-red);
-
-  border-color: var(--pdf-red);
-}
-
-
-/* DOI */
-
-.pub-badge.doi,
-.poster-btn.outline {
-  color: var(--doi-blue);
-
-  background: var(--doi-bg);
-
-  border: 1px solid #bfdbfe;
-}
-
-
-.pub-badge.doi:hover,
-.poster-btn.outline:hover {
-  color: #ffffff;
-
-  background: var(--doi-blue);
-
-  border-color: var(--doi-blue);
-}
-
-
-/* Slides */
-
-.pub-badge.slides {
-  color: var(--slides-purple);
-
-  background: var(--slides-bg);
-
-  border: 1px solid #e9d5ff;
-}
-
-
-.pub-badge.slides:hover {
-  color: #ffffff;
-
-  background: var(--slides-purple);
-
-  border-color: var(--slides-purple);
-}
-
-
-/* ==========================================================================
-   19. POSTER CARDS
-   ========================================================================== */
-
+/* --- Poster Cards --- */
 .poster-card {
   display: flex;
-
-  margin-bottom: 1rem;
-
+  flex-direction: column;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light-blue);
+  border-radius: 8px;
   overflow: hidden;
-
-  background: #ffffff;
-
-  border:
-    1px solid var(--border-subtle);
-
-  border-radius: var(--radius-md);
-
-  box-shadow: var(--shadow-sm);
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+@media (min-width: 640px) {
+  .poster-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
 
 .poster-card:hover {
   transform: translateY(-2px);
-
-  box-shadow: var(--shadow-hover);
+  box-shadow: 0 8px 16px rgba(0, 33, 71, 0.1);
 }
-
 
 .poster-thumbnail {
   position: relative;
-
-  width: 210px;
-  min-width: 210px;
-
-  background: var(--primary-navy);
-
+  width: 100%;
+  background-color: var(--primary-navy);
   overflow: hidden;
 }
 
-
-.poster-thumbnail img {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
+@media (min-width: 640px) {
+  .poster-thumbnail {
+    width: 210px;
+    min-width: 210px;
+  }
 }
 
+.poster-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
 .poster-card:hover .poster-thumbnail img {
   transform: scale(1.03);
+  opacity: 0.85;
 }
-
 
 .poster-overlay {
   position: absolute;
   inset: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  color: #ffffff;
-
-  text-decoration: none;
-
-  background:
-    rgba(0, 33, 71, 0.70);
-
+  background: rgba(0, 33, 71, 0.65);
   opacity: 0;
-
-  transition:
-    opacity 0.2s ease;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
-
-.poster-thumbnail:hover .poster-overlay,
-.poster-thumbnail:focus-within .poster-overlay {
+.poster-thumbnail:hover .poster-overlay {
   opacity: 1;
 }
 
-
 .overlay-text {
-  padding: 0.4rem 0.75rem;
-
   color: #ffffff;
-
-  font-size: 0.78rem;
-  font-weight: 700;
-
-  background:
-    rgba(255, 255, 255, 0.12);
-
-  border:
-    1px solid rgba(255, 255, 255, 0.35);
-
-  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
 }
 
-
 .poster-content {
+  padding: 1.2rem 1.4rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   flex: 1;
-
-  padding: 1.25rem 1.4rem;
 }
-
 
 .poster-meta {
   display: flex;
   align-items: center;
-
-  flex-wrap: wrap;
-
-  gap: 0.4rem;
-
-  margin-bottom: 0.55rem;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
 }
-
 
 .poster-tag {
-  padding: 0.16rem 0.45rem;
-
-  color: var(--academic-blue);
-
-  background: var(--accent-blue-light);
-
-  border:
-    1px solid var(--border-blue);
-
-  border-radius: 4px;
-
-  font-size: 0.68rem;
-  font-weight: 800;
-
-  letter-spacing: 0.05em;
-
+  background-color: var(--bg-light-blue);
+  color: var(--accent-blue);
+  font-size: 0.7rem;
+  font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-light-blue);
 }
 
-
 .session-badge {
-  padding: 0.16rem 0.45rem;
-
+  background-color: #f1f5f9;
   color: var(--text-muted);
-
-  background: #f1f5f9;
-
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
   border-radius: 4px;
+}
 
-  font-size: 0.68rem;
+.poster-title {
+  margin: 0 0 0.4rem 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.1rem;
+  line-height: 1.35;
+  color: var(--primary-navy);
+}
+
+.poster-authors {
+  margin: 0 0 0.3rem 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.highlight-author {
+  color: var(--primary-navy);
   font-weight: 600;
 }
 
-
-.poster-title {
-  margin-bottom: 0.45rem;
-
-  color: var(--primary-navy);
-
-  font-size: 1.15rem;
-}
-
-
-.poster-authors {
-  margin-bottom: 0.3rem;
-
-  color: var(--text-muted);
-
-  font-size: 0.85rem;
-}
-
-
 .poster-venue {
-  margin-bottom: 1rem;
-
+  margin: 0 0 1rem 0;
+  font-size: 0.83rem;
   color: var(--text-muted);
-
-  font-size: 0.8rem;
 }
 
+/* --- Action Buttons Toolbar --- */
+.poster-actions,
+.pub-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: auto;
+}
 
-.poster-btn.primary {
+.poster-btn,
+.pub-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.3rem 0.65rem;
+  border-radius: 4px;
+  transition: all 0.15s ease-in-out;
+}
+
+.badge-icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* Badge & Button Color Schemes */
+.poster-btn.primary,
+.pub-badge.poster {
+  background-color: var(--bg-light-blue);
+  color: var(--primary-navy);
+  border: 1px solid var(--border-light-blue);
+}
+
+.poster-btn.primary:hover,
+.pub-badge.poster:hover {
+  background-color: var(--primary-navy);
   color: #ffffff;
-
-  background: var(--primary-navy);
-
-  border:
-    1px solid var(--primary-navy);
+  border-color: var(--primary-navy);
 }
 
-
-.poster-btn.primary:hover {
-  background: var(--primary-navy-light);
-
-  border-color: var(--primary-navy-light);
+.pub-badge.pdf {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
 }
 
-
-/* ==========================================================================
-   20. DONATION / SUPPORT
-   ========================================================================== */
-
-.donate-section {
-  margin-top: 2.5rem;
-
-  padding: 2rem;
-
-  text-align: center;
-
-  background:
-    linear-gradient(
-      135deg,
-      #eef5fb 0%,
-      #f7fafd 100%
-    );
-
-  border:
-    1px solid var(--border-blue);
-
-  border-radius: var(--radius-md);
+.pub-badge.pdf:hover {
+  background-color: #b91c1c;
+  color: #ffffff;
 }
 
+.poster-btn.outline,
+.pub-badge.doi {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
 
-.donate-section h2 {
+.poster-btn.outline:hover,
+.pub-badge.doi:hover {
+  background-color: #1d4ed8;
+  color: #ffffff;
+}
+
+.pub-badge.slides {
+  background-color: #faf5ff;
+  color: #6b21a8;
+  border: 1px solid #e9d5ff;
+}
+
+.pub-badge.slides:hover {
+  background-color: #6b21a8;
+  color: #ffffff;
+}
+
+.poster-btn.secondary {
+  background-color: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+}
+
+.poster-btn.secondary:hover {
+  background-color: #e2e8f0;
   color: var(--primary-navy);
 }
 
-
-.donate-section p {
-  max-width: 650px;
-
-  margin: 0 auto 1.25rem;
-
-  color: var(--text-muted);
+/* --- Callout & Donate Section --- */
+.donate-section {
+  text-align: center;
+  margin: 30px 0;
+  padding: 2rem;
+  background-color: var(--bg-light-blue);
+  border-radius: 8px;
+  border: 1px solid var(--border-light-blue);
 }
-
 
 .lab-donate-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  min-height: 42px;
-
-  padding: 0.65rem 1.35rem;
-
+  gap: 8px;
+  padding: 12px 24px;
+  background-color: var(--primary-navy);
   color: #ffffff;
-
-  background: var(--primary-navy);
-
-  border:
-    1px solid var(--primary-navy);
-
-  border-radius: 6px;
-
-  font-weight: 700;
-
   text-decoration: none;
-
-  box-shadow:
-    0 2px 5px rgba(0, 33, 71, 0.15);
-
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
 }
-
 
 .lab-donate-btn:hover {
-  background: var(--primary-navy-light);
-
-  transform: translateY(-1px);
-
-  box-shadow:
-    0 4px 10px rgba(0, 33, 71, 0.18);
+  background-color: #001530;
 }
 
-
-/* ==========================================================================
-   21. FOOTER
-   ========================================================================== */
-
+/* --- Footer --- */
 footer {
-  margin-top: 0;
-
-  padding: 1.75rem 1rem;
-
-  color: #cbd8e5;
-
-  background: var(--primary-navy);
-
-  border-top:
-    4px solid #1e4f8a;
-
-  font-size: 0.85rem;
-}
-
-
-.footer-inner {
-  width: min(
-    calc(100% - 2rem),
-    var(--content-width)
-  );
-
-  margin: 0 auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  flex-wrap: wrap;
-
-  gap: 0.4rem 1rem;
-
   text-align: center;
-}
-
-
-.footer-inner strong {
-  color: #ffffff;
-}
-
-
-/* ==========================================================================
-   22. TABLET
-   ========================================================================== */
-
-@media (max-width: 900px) {
-
-  .header-inner {
-    width:
-      min(
-        calc(100% - 2rem),
-        var(--content-width)
-      );
-
-    gap: 1rem;
-  }
-
-
-  nav a {
-    padding:
-      0.4rem
-      0.5rem;
-
-    font-size: 0.76rem;
-  }
-
-
-  .research-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
-}
-
-
-/* ==========================================================================
-   23. SMALL TABLET / LARGE PHONE
-   ========================================================================== */
-
-@media (max-width: 720px) {
-
-  :root {
-    --header-height: auto;
-  }
-
-
-  /*
-   * Mobile header becomes two clean rows:
-   *
-   * Row 1 = TSU / Meat Lab
-   * Row 2 = navigation
-   */
-  .header-inner {
-    min-height: 0;
-
-    flex-wrap: wrap;
-
-    padding:
-      0.7rem
-      0;
-
-    gap: 0.65rem;
-  }
-
-
-  .header-brand {
-    width: 100%;
-
-    margin-right: 0;
-  }
-
-
-  nav {
-    width: 100%;
-
-    margin-left: 0;
-  }
-
-
-  nav ul {
-    justify-content: flex-start;
-
-    width: 100%;
-
-    overflow-x: auto;
-
-    scrollbar-width: none;
-  }
-
-
-  nav ul::-webkit-scrollbar {
-    display: none;
-  }
-
-
-  nav a {
-    flex: 0 0 auto;
-
-    min-height: 34px;
-
-    padding:
-      0.35rem
-      0.65rem;
-
-    font-size: 0.74rem;
-  }
-
-
-  main {
-    padding: 1.75rem;
-  }
-
-
-  .poster-card {
-    flex-direction: column;
-  }
-
-
-  .poster-thumbnail {
-    width: 100%;
-    min-width: 0;
-
-    height: 260px;
-  }
-
-}
-
-
-/* ==========================================================================
-   24. MOBILE
-   ========================================================================== */
-
-@media (max-width: 560px) {
-
-  body {
-    font-size: 15px;
-  }
-
-
-  .header-inner {
-    width:
-      calc(100% - 1.25rem);
-
-    padding:
-      0.6rem
-      0;
-
-    gap: 0.55rem;
-  }
-
-
-  /*
-   * Mobile logo starts larger than the old version.
-   */
-  .logo {
-    height: 36px;
-    max-width: 95px;
-  }
-
-
-  /*
-   * More obvious scrolled size change.
-   */
-  header.scrolled .logo {
-    height: 30px;
-    max-width: 82px;
-  }
-
-
-  .brand-divider {
-    height: 30px;
-  }
-
-
-  header.scrolled .brand-divider {
-    height: 25px;
-  }
-
-
-  header h1 {
-    font-size: 0.98rem;
-  }
-
-
-  header.scrolled h1 {
-    font-size: 0.90rem;
-  }
-
-
-  .header-brand-text span {
-    display: none;
-  }
-
-
-  nav ul {
-    gap: 0.1rem;
-  }
-
-
-  nav a {
-    min-height: 31px;
-
-    padding:
-      0.28rem
-      0.45rem;
-
-    font-size: 0.68rem;
-  }
-
-
-  nav a.active::after {
-    bottom: 2px;
-
-    width: 14px;
-  }
-
-
-  main {
-    width:
-      calc(100% - 1rem);
-
-    margin-top: 1rem;
-
-    padding: 1.25rem;
-
-    border-radius: 6px;
-  }
-
-
-  .hero-section {
-    padding-bottom: 1.5rem;
-  }
-
-
-  .hero-section h2 {
-    font-size: 1.85rem;
-  }
-
-
-  .lead {
-    font-size: 0.98rem;
-  }
-
-
-  .content-section {
-    padding: 1.75rem 0;
-  }
-
-
-  .research-grid {
-    grid-template-columns: 1fr;
-  }
-
-
-  .member-card {
-    align-items: flex-start;
-
-    flex-direction: column;
-  }
-
-
-  .member-photo {
-    width: 100px;
-    height: 100px;
-  }
-
-
-  .publication-card {
-    padding: 1rem;
-  }
-
-
-  .citation {
-    font-size: 0.9rem;
-  }
-
-
-  .poster-thumbnail {
-    height: 220px;
-  }
-
-
-  .poster-content {
-    padding: 1rem;
-  }
-
-
-  .donate-section {
-    padding:
-      1.5rem
-      1rem;
-  }
-
-}
-
-
-/* ==========================================================================
-   25. ACCESSIBILITY / REDUCED MOTION
-   ========================================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-  html {
-    scroll-behavior: auto;
-  }
-
-
-  *,
-  *::before,
-  *::after {
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-  }
-
+  padding: 1.5rem;
+  background-color: var(--primary-navy);
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  margin-top: 2rem;
 }
