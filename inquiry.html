@@ -1,19 +1,14 @@
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const header = document.querySelector('header');
-
-    function checkScroll() {
-      if (window.scrollY > 15) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+  window.addEventListener('scroll', function() {
+    const header = document.getElementById('main-header');
+    if (window.scrollY > 20) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
     }
-
-    checkScroll();
-    window.addEventListener('scroll', checkScroll, { passive: true });
   });
 </script>
+
 <!DOCTYPE html>
 
 <script>
