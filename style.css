@@ -9,11 +9,13 @@ header {
   background-color: #002147;
   color: white;
   padding: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 1.8rem;
+.logo {
+  height: 60px;
 }
 
 nav ul {
@@ -42,8 +44,30 @@ main {
   border-radius: 8px;
 }
 
-section {
-  margin-bottom: 2rem;
+.member-card {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.member-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #ddd;
+}
+
+.lab-photo {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+}
+
+.photo-box {
+  text-align: center;
+  margin-top: 1rem;
 }
 
 footer {
@@ -51,24 +75,4 @@ footer {
   padding: 1rem;
   background-color: #e0e0e0;
   font-size: 0.9rem;
-}
-
-input, textarea, select {
-  width: 100%;
-  padding: 0.6rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  background-color: #002147;
-  color: white;
-  padding: 0.7rem 1.2rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #003366;
 }
