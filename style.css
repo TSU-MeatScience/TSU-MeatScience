@@ -1,3 +1,6 @@
+
+
+
 /* ==========================================================================
    TSU MEAT SCIENCE LAB
    Consolidated Professional / Apple-Inspired Stylesheet
@@ -230,6 +233,14 @@ p {
  * remains obvious.
  */
 
+/* ==========================================================================
+   TSU HEADER — CLEAN / APPLE-INSPIRED VERSION
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   HEADER
+   -------------------------------------------------------------------------- */
+
 header {
   position: sticky;
   top: 0;
@@ -239,74 +250,76 @@ header {
 
   /*
    * IMPORTANT:
-   * This is intentionally more transparent than the original.
+   * Keep the background genuinely transparent enough
+   * for the page behind it to be visible.
    */
-  background:
-    rgba(0, 33, 71, 0.88);
+  background-color: rgba(0, 33, 71, 0.68);
 
   /*
-   * Apple-style glass effect.
+   * Frosted-glass effect.
+   * The fallback background above still works if unsupported.
    */
-  -webkit-backdrop-filter: saturate(150%) blur(16px);
-  backdrop-filter: saturate(150%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  backdrop-filter: saturate(180%) blur(18px);
 
-  border-bottom:
-    1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
 
   box-shadow:
-    var(--shadow-header);
+    0 2px 12px rgba(0, 20, 45, 0.08);
 
-  /*
-   * Smoothly animates:
-   * - transparency
-   * - shadow
-   * - border
-   */
   transition:
-    background-color 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
+    background-color 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
 }
 
 
 /*
- * Slightly more transparent top state.
+ * TOP OF PAGE
+ *
+ * More transparent.
  */
 header:not(.scrolled) {
-  background:
-    rgba(0, 33, 71, 0.82);
+  background-color: rgba(0, 33, 71, 0.58);
+
+  box-shadow:
+    0 1px 8px rgba(0, 20, 45, 0.06);
 }
 
 
 /*
- * SCROLLED STATE
+ * AFTER SCROLLING
  *
- * More opaque and more substantial shadow.
- * This makes the transition visually apparent.
+ * Noticeably more opaque.
  */
 header.scrolled {
-  background:
-    rgba(0, 33, 71, 0.97);
+  background-color: rgba(0, 33, 71, 0.96);
 
   border-bottom-color:
     rgba(255, 255, 255, 0.20);
 
   box-shadow:
-    var(--shadow-header-scrolled);
+    0 8px 28px rgba(0, 20, 45, 0.22);
 }
 
 
-/* ==========================================================================
-   5. HEADER INNER
-   ========================================================================== */
+/* --------------------------------------------------------------------------
+   HEADER INNER
+   -------------------------------------------------------------------------- */
 
 .header-inner {
+
+  /*
+   * Wider than the main content.
+   *
+   * This prevents the logo and tabs from feeling crowded.
+   */
   width: min(
-    calc(100% - 3rem),
-    var(--content-width)
+    calc(100% - 4rem),
+    1180px
   );
 
-  min-height: var(--header-height);
+  min-height: 82px;
 
   margin: 0 auto;
 
@@ -314,23 +327,680 @@ header.scrolled {
   align-items: center;
 
   /*
-   * IMPORTANT:
-   * Brand stays firmly on the left.
-   * Navigation is pushed toward the right.
+   * Brand stays LEFT.
+   * Navigation gets its own comfortable space on RIGHT.
    */
   justify-content: flex-start;
 
-  gap: 2rem;
+  /*
+   * Large separation between branding and navigation.
+   */
+  gap: 4rem;
 
   transition:
-    min-height 0.35s ease;
+    min-height 0.4s ease;
 }
 
 
+/*
+ * Header becomes visibly smaller after scrolling.
+ */
 header.scrolled .header-inner {
   min-height: 64px;
 }
 
+
+/* --------------------------------------------------------------------------
+   TSU BRAND
+   -------------------------------------------------------------------------- */
+
+.header-brand {
+
+  display: flex;
+  align-items: center;
+
+  /*
+   * IMPORTANT:
+   * Do NOT let the brand become squeezed.
+   */
+  flex: 0 0 auto;
+
+  min-width: max-content;
+
+  margin-right: auto;
+
+  gap: 1rem;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  transition:
+    opacity 0.25s ease;
+}
+
+
+.header-brand:hover {
+  opacity: 0.94;
+}
+
+
+/* --------------------------------------------------------------------------
+   TSU LOGO
+   -------------------------------------------------------------------------- */
+
+.logo {
+
+  display: block;
+
+  /*
+   * Larger initial logo.
+   */
+  width: auto;
+  height: 50px;
+
+  max-width: 145px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+
+  transition:
+    height 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    max-width 0.4s ease;
+}
+
+
+/*
+ * Noticeable shrink when scrolling.
+ */
+header.scrolled .logo {
+  height: 37px;
+  max-width: 115px;
+}
+
+
+/* --------------------------------------------------------------------------
+   BRAND DIVIDER
+   -------------------------------------------------------------------------- */
+
+.brand-divider {
+
+  width: 1px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  background:
+    rgba(255, 255, 255, 0.30);
+
+  transition:
+    height 0.4s ease,
+    opacity 0.4s ease;
+}
+
+
+header.scrolled .brand-divider {
+  height: 29px;
+  opacity: 0.70;
+}
+
+
+/* --------------------------------------------------------------------------
+   MEAT LAB TEXT
+   -------------------------------------------------------------------------- */
+
+.header-brand-text {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-width: max-content;
+
+  padding-right: 0.5rem;
+}
+
+
+header h1 {
+
+  margin: 0;
+
+  color: #ffffff;
+
+  /*
+   * Use a clean sans-serif for the header.
+   * This feels more modern / Apple-like.
+   */
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 1.22rem;
+
+  font-weight: 650;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.015em;
+
+  white-space: nowrap;
+
+  transition:
+    font-size 0.4s ease;
+}
+
+
+header.scrolled h1 {
+  font-size: 1.04rem;
+}
+
+
+.header-brand-text span {
+
+  display: block;
+
+  margin-top: 5px;
+
+  color:
+    rgba(222, 233, 244, 0.78);
+
+  font-size: 0.64rem;
+
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+
+/* --------------------------------------------------------------------------
+   NAVIGATION
+   -------------------------------------------------------------------------- */
+
+nav {
+
+  /*
+   * No auto margin here.
+   *
+   * .header-brand handles the available space.
+   */
+  flex: 0 0 auto;
+
+  margin-left: 0;
+}
+
+
+nav ul {
+
+  display: flex;
+  align-items: center;
+
+  /*
+   * More breathing room between tabs.
+   */
+  gap: 0.35rem;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+
+nav a {
+
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+
+  /*
+   * More horizontal padding.
+   */
+  padding:
+    0.45rem
+    0.85rem;
+
+  color:
+    rgba(235, 243, 250, 0.78);
+
+  text-decoration: none;
+
+  font-size: 0.80rem;
+
+  font-weight: 600;
+
+  letter-spacing: -0.005em;
+
+  border-radius: 8px;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+nav a:hover {
+
+  color: #ffffff;
+
+  background:
+    rgba(255, 255, 255, 0.10);
+
+  transform: translateY(-1px);
+}
+
+
+nav a:focus-visible {
+
+  outline:
+    2px solid #93c5fd;
+
+  outline-offset: 3px;
+}
+
+
+/* --------------------------------------------------------------------------
+   ACTIVE TAB
+   -------------------------------------------------------------------------- */
+
+nav a.active {
+
+  color: #ffffff;
+
+  background:
+    rgba(255, 255, 255, 0.11);
+
+  box-shadow:
+    inset 0 0 0 1px
+    rgba(255, 255, 255, 0.05);
+}
+
+
+nav a.active::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 5px;
+
+  width: 18px;
+  height: 2px;
+
+  background: #9ac5ed;
+
+  border-radius: 999px;
+
+  transform:
+    translateX(-50%);
+}
+
+
+/* ==========================================================================
+   TABLET
+   ========================================================================== */
+
+@media (max-width: 1000px) {
+
+  .header-inner {
+
+    width:
+      calc(100% - 2.5rem);
+
+    gap: 2rem;
+  }
+
+
+  nav ul {
+    gap: 0.15rem;
+  }
+
+
+  nav a {
+
+    padding:
+      0.4rem
+      0.55rem;
+
+    font-size: 0.74rem;
+  }
+
+}
+
+
+/* ==========================================================================
+   MOBILE / SMALL TABLET
+   ========================================================================== */
+
+@media (max-width: 760px) {
+
+  header {
+    background-color:
+      rgba(0, 33, 71, 0.94);
+
+    -webkit-backdrop-filter:
+      saturate(150%) blur(14px);
+
+    backdrop-filter:
+      saturate(150%) blur(14px);
+  }
+
+
+  header:not(.scrolled) {
+    background-color:
+      rgba(0, 33, 71, 0.88);
+  }
+
+
+  .header-inner {
+
+    width:
+      calc(100% - 1.5rem);
+
+    min-height: 0;
+
+    padding:
+      0.7rem
+      0;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 0.65rem;
+  }
+
+
+  header.scrolled .header-inner {
+    min-height: 0;
+  }
+
+
+  .header-brand {
+
+    width: 100%;
+
+    margin-right: 0;
+
+    gap: 0.75rem;
+  }
+
+
+  .logo {
+
+    height: 40px;
+
+    max-width: 105px;
+  }
+
+
+  header.scrolled .logo {
+
+    height: 32px;
+
+    max-width: 88px;
+  }
+
+
+  .brand-divider {
+
+    height: 32px;
+  }
+
+
+  header.scrolled .brand-divider {
+
+    height: 25px;
+  }
+
+
+  header h1 {
+    font-size: 1rem;
+  }
+
+
+  header.scrolled h1 {
+    font-size: 0.92rem;
+  }
+
+
+  /*
+   * Tabs become a clean horizontal row.
+   */
+  nav {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+  }
+
+
+  nav::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  nav ul {
+
+    width: max-content;
+
+    justify-content: flex-start;
+
+    gap: 0.15rem;
+  }
+
+
+  nav a {
+
+    min-height: 34px;
+
+    padding:
+      0.3rem
+      0.65rem;
+
+    font-size: 0.72rem;
+  }
+
+}
+
+
+/* ==========================================================================
+   SMALL MOBILE
+   ========================================================================== */
+
+@media (max-width: 560px) {
+
+  .header-inner {
+
+    width:
+      calc(100% - 1rem);
+
+    padding:
+      0.6rem
+      0;
+  }
+
+
+  .logo {
+
+    height: 36px;
+
+    max-width: 92px;
+  }
+
+
+  header.scrolled .logo {
+
+    height: 29px;
+
+    max-width: 78px;
+  }
+
+
+  .brand-divider {
+
+    height: 29px;
+  }
+
+
+  header.scrolled .brand-divider {
+
+    height: 23px;
+  }
+
+
+  header h1 {
+
+    font-size: 0.94rem;
+  }
+
+
+  header.scrolled h1 {
+
+    font-size: 0.87rem;
+  }
+
+
+  /*
+   * Hide the university subtitle on very small screens
+   * to prevent crowding.
+   */
+  .header-brand-text span {
+    display: none;
+  }
+
+
+  nav a {
+
+    min-height: 32px;
+
+    padding:
+      0.25rem
+      0.5rem;
+
+    font-size: 0.67rem;
+  }
+
+
+  nav a.active::after {
+
+    bottom: 3px;
+
+    width: 14px;
+  }
+
+}
+
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  * {
+    transition-duration: 0.01ms !important;
+  }
+
+}
+
+The important change
+
+Your previous layout effectively had:
+
+[ TSU LOGO | Meat Lab ]        [tabs]
+
+
+but because everything was constrained to 1050px, the available space became tight.
+
+This version deliberately gives the header 1180px:
+
+width: min(
+  calc(100% - 4rem),
+  1180px
+);
+
+
+and uses:
+
+gap: 4rem;
+
+
+while also making the brand itself consume the available left-side space:
+
+.header-brand {
+  margin-right: auto;
+}
+
+
+So on a desktop display you'll get much more like:
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│                                                                          │
+│  [TSU] │ TSU MEAT SCIENCE LAB                         About  Research ...│
+│                                                                          │
+└──────────────────────────────────────────────────────────────────────────┘
+
+
+rather than:
+
+[TSU]│Lab                  About Research Team Publications Posters Support
+
+Why the transparency should now actually be visible
+
+I changed the top state to:
+
+header:not(.scrolled) {
+    background-color: rgba(0, 33, 71, 0.58);
+}
+
+
+and the scrolled state to:
+
+header.scrolled {
+    background-color: rgba(0, 33, 71, 0.96);
+}
+
+
+That's a 38 percentage-point difference, rather than a subtle 5–15 point change.
+
+The transition is:
+
+TOP
+████████████████████░░░░
+58% navy
+↓
+scroll
+████████████████████████
+96% navy
+
+
+The logo also goes from:
+
+50px → 37px
+
+
+so the size change should be much easier to perceive.
+
+One caveat: transparency cannot be visually apparent if there is nothing contrasting behind the header. Your current body background is very pale, so the difference will be most noticeable around the edges/texture underneath the header. If you want the classic Apple effect where the content visibly moves underneath the header, I would make one additional change to the HTML/layout: put the hero/content immediately underneath the sticky header and let the background texture extend behind it.
 
 /* ==========================================================================
    6. TSU BRAND
