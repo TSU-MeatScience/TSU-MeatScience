@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TSU Meat Science Laboratory – Inquiries</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+  <h1>TSU Meat Science Laboratory</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Introduction</a></li>
+      <li><a href="members.html">Lab Members</a></li>
+      <li><a href="inquiry.html">Inquiries</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2>Graduate Program & Collaboration Inquiries</h2>
+    <p>
+      Prospective graduate students and research collaborators are invited to
+      submit inquiries using the form below. We welcome interest in MALDI imaging,
+      spatial nutrition analysis, meat quality, and interdisciplinary research.
+    </p>
+  </section>
+
+  <section>
+    <h3>Inquiry Form</h3>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <label for="name">Full Name</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="email">Email Address</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="type">Inquiry Type</label><br>
+      <select id="type" name="type" required>
+        <option value="Graduate Program">Graduate Program</option>
+        <option value="Research Collaboration">Research Collaboration</option>
+        <option value="General Question">General Question</option>
+      </select><br><br>
+
+      <label for="message">Message</label><br>
+      <textarea id="message" name="message" rows="6" required></textarea><br><br>
+
+      <button type="submit">Submit Inquiry</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 TSU Meat Science Laboratory</p>
+</footer>
+</body>
+</html>
