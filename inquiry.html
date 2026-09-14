@@ -8,6 +8,7 @@
 
 <body>
 <header>
+  <img src="images/tsu_logo.png" alt="TSU Logo" class="logo">
   <h1>TSU Meat Science Laboratory</h1>
   <nav>
     <ul>
@@ -30,25 +31,13 @@
 
   <section>
     <h3>Inquiry Form</h3>
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <label for="name">Full Name</label><br>
-      <input type="text" id="name" name="name" required><br><br>
 
-      <label for="email">Email Address</label><br>
-      <input type="email" id="email" name="email" required><br><br>
+    <!-- Replace FORM_ID with your Google Form embed link -->
+    <iframe src="https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true"
+            width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">
+      Loading…
+    </iframe>
 
-      <label for="type">Inquiry Type</label><br>
-      <select id="type" name="type" required>
-        <option value="Graduate Program">Graduate Program</option>
-        <option value="Research Collaboration">Research Collaboration</option>
-        <option value="General Question">General Question</option>
-      </select><br><br>
-
-      <label for="message">Message</label><br>
-      <textarea id="message" name="message" rows="6" required></textarea><br><br>
-
-      <button type="submit">Submit Inquiry</button>
-    </form>
   </section>
 </main>
 
