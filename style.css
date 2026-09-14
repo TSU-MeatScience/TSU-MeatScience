@@ -37,24 +37,30 @@ body {
 
 /* --- Header & Navigation --- */
 /* --- Apple-Style Translucent Sticky Header --- */
+/* --- Apple-Style Dynamic Header --- */
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
   
-  /* Translucent Dark Blue (Primary Navy at ~82% Opacity) */
-  background-color: rgba(15, 34, 64, 0.82); 
-  
-  /* Apple Frosted-Glass Backdrop Blur */
+  /* Initial State (At the top): 100% Solid Dark Navy */
+  background-color: #0f2240; 
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-bottom: 1px solid transparent;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+  /* Smooth transition when scrolling up/down */
+  transition: background-color 0.35s ease, backdrop-filter 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Scrolled State: Translucent Frosted Glass */
+header.scrolled {
+  background-color: rgba(15, 34, 64, 0.80); /* Translucent navy */
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  
-  /* Subtle bottom border to define edge against page content */
   border-bottom: 1px solid rgba(203, 223, 245, 0.18);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  
-  /* Smooth interaction transition */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Optional: Enhances tab contrast over blurred content */
