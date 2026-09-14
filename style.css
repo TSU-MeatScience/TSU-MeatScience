@@ -3,17 +3,24 @@
    ========================================================================== */
 
 :root {
-  --bg-page: #f2f4f8;           /* Light Gray base */
-  --bg-card: #ffffff;           /* Crisp white container/card background */
-  --bg-light-blue: #eef5fc;     /* Light blue banner/card accent */
-  --border-light-blue: #cbdff5;/* Light blue border outline */
+  --bg-page: #f2f4f8;            /* Light Gray base */
+  --bg-card: #ffffff;            /* Crisp white container/card background */
+  --bg-light-blue: #eef5fc;      /* Light blue banner/card accent */
+  --border-light-blue: #cbdff5;  /* Light blue border outline */
   
-  --primary-navy: #002147;     /* TSU Deep Navy Blue */
-  --accent-blue: #1d4ed8;       /* Interactive Academic Blue */
-  --text-main: #1e293b;        /* High-contrast charcoal text */
-  --text-muted: #64748b;       /* Muted slate text for dates/authors */
-  --border-subtle: #e2e8f0;    /* Subtle dividers */
-  --shadow-card: 0 4px 12px rgba(0, 33, 71, 0.05);
+  --primary-navy: #002147;      /* TSU Deep Navy Blue */
+  --accent-blue: #1e40af;        /* Darker Interactive Academic Blue (AAA Contrast) */
+  --text-main: #0f172a;         /* High-contrast dark slate text */
+  --text-muted: #334155;        /* High-contrast dark slate text for dates/authors */
+  --border-subtle: #cbd5e1;     /* Sharper dividers */
+  --shadow-card: 0 4px 12px rgba(0, 33, 71, 0.08);
+}
+
+/* --- Global Image Reset --- */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* --- Global Page Setup --- */
@@ -31,23 +38,21 @@ body {
   background-repeat: repeat;
 }
 
-/* --- Sticky Dynamic Header (Single Horizontal Line Layout) --- */
+/* --- Sticky Dynamic Header --- */
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
   
-  /* Initial State at Top of Page: Semi-Transparent Dark Blue */
-  background-color: rgba(0, 33, 71, 0.65); 
+  /* Increased contrast against background */
+  background-color: rgba(0, 33, 71, 0.92); 
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border-bottom: 1px solid rgba(203, 223, 245, 0.18);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(203, 223, 245, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   
-  /* Smooth scroll transition */
   transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
   
-  /* Force Logo, Title, and Nav onto ONE SINGLE LINE */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -55,40 +60,40 @@ header {
   flex-wrap: nowrap;
 }
 
-/* Scrolled Down State (Triggered by Scroll Listener) */
 header.scrolled {
-  background-color: rgba(0, 33, 71, 0.96); /* Solid Dark Blue on Scroll */
+  background-color: rgba(0, 33, 71, 0.98);
   padding: 0.5rem 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Brand container for Logo + Laboratory Name on the SAME LINE */
+/* Fixed spacing between Logo and TSU Meat Lab title */
 .header-brand {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 1.75rem; /* Increased gap to give ample space */
   flex-shrink: 0;
 }
 
 .logo {
   height: 42px;
   width: auto;
+  max-width: 160px;
   display: block;
   object-fit: contain;
 }
 
 .brand-title {
   color: #ffffff;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
   margin: 0;
-  padding: 0;
-  white-space: nowrap; /* Prevents text wrapping */
+  padding-left: 0.25rem; /* Extra separation buffer */
+  white-space: nowrap;
   line-height: 1;
 }
 
-/* Navigation Menu */
+/* Navigation Menu - High Contrast */
 header nav {
   margin-left: auto;
 }
@@ -99,45 +104,113 @@ nav ul {
   margin: 0;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 nav ul li a {
-  padding: 0.35rem 0.65rem;
-  color: #cfe2ff;
+  padding: 0.4rem 0.8rem;
+  color: #ffffff; /* Pure white for high contrast */
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   white-space: nowrap;
   border-radius: 4px;
-  transition: color 0.2s ease, background-color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a:focus {
   color: #ffffff;
-  background-color: rgba(203, 223, 245, 0.18);
+  background-color: rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
+/* --- Page Layout with Left Panel & Main Content --- */
+.page-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Left Panel Tabs Container */
+.left-panel {
+  flex: 0 0 240px;
+  background: var(--bg-card);
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-card);
+  padding: 1rem 0;
+  position: sticky;
+  top: 90px;
+}
+
+.left-panel .panel-title {
+  padding: 0 1.25rem 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.left-panel .panel-tab {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.left-panel .panel-tab:hover {
+  background-color: var(--bg-light-blue);
+  color: var(--accent-blue);
+}
+
+.left-panel .panel-tab.active {
+  background-color: var(--bg-light-blue);
+  border-left-color: var(--primary-navy);
+  color: var(--primary-navy);
+  font-weight: 700;
 }
 
 /* --- Main Layout Container --- */
 main {
+  flex: 1;
   background: var(--bg-card);
-  max-width: 950px;
-  margin: 2rem auto;
   padding: 2.5rem;
   border-radius: 10px;
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-card);
 }
 
-/* --- Publication Section Cards (Small Image Left Tab) --- */
+/* --- Index Page Hero / Banner Image Fix --- */
+.index-image, 
+.hero-image {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-light-blue);
+  box-shadow: var(--shadow-card);
+}
+
+/* --- Publication Section Cards & Fixed Thumbnail --- */
 .publication-card {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
   margin-bottom: 1.5rem;
-  padding: 0.85rem 1.1rem;
+  padding: 1rem 1.25rem;
   background-color: var(--bg-card);
-  border-left: 5px solid var(--primary-navy); /* Dark Blue accent tab */
+  border-left: 6px solid var(--primary-navy); /* Visually pronounced left tab */
   border-top: 1px solid var(--border-subtle);
   border-right: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
@@ -153,11 +226,14 @@ main {
   box-shadow: 0 4px 12px rgba(0, 33, 71, 0.08);
 }
 
-/* Compact Left-Side Tab Image */
-.pub-tab-thumb {
+/* Compact Publication Tab Thumbnail (Sizing Enforced) */
+.pub-tab-thumb,
+.publication-card img {
   flex-shrink: 0;
-  width: 55px;  /* Small compact size */
-  height: 75px;
+  width: 60px;
+  height: 80px;
+  max-width: 60px;
+  max-height: 80px;
   object-fit: cover;
   border-radius: 4px;
   border: 1px solid var(--border-light-blue);
@@ -179,7 +255,7 @@ main {
 }
 
 .authors {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--primary-navy);
 }
 
@@ -190,77 +266,82 @@ main {
 
 .venue {
   color: var(--text-muted);
+  font-weight: 500;
 }
 
-/* --- Action Buttons & Badges --- */
+/* --- Action Badges with Increased Contrast --- */
 .pub-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.5rem;
   align-items: center;
+  margin-top: 0.25rem;
 }
 
 .pub-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 700;
   text-decoration: none;
-  padding: 0.25rem 0.55rem;
+  padding: 0.3rem 0.65rem;
   border-radius: 4px;
   transition: all 0.15s ease-in-out;
 }
 
 .pub-badge.pdf {
   background-color: #fef2f2;
-  color: #b91c1c;
-  border: 1px solid #fca5a5;
+  color: #991b1b; /* Darker red for high contrast */
+  border: 1px solid #f87171;
 }
 
 .pub-badge.pdf:hover {
-  background-color: #b91c1c;
+  background-color: #991b1b;
   color: #ffffff;
 }
 
 .pub-badge.doi {
   background-color: #eff6ff;
-  color: #1d4ed8;
-  border: 1px solid #bfdbfe;
+  color: #1e40af; /* Darker blue for high contrast */
+  border: 1px solid #93c5fd;
 }
 
 .pub-badge.doi:hover {
-  background-color: #1d4ed8;
+  background-color: #1e40af;
   color: #ffffff;
 }
 
 /* --- Member & Lab Cards --- */
 .member-card {
   display: flex;
-  gap: 1.2rem;
+  gap: 1.25rem;
   margin-bottom: 1.5rem;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 1.25rem;
   background-color: var(--bg-light-blue);
   border: 1px solid var(--border-light-blue);
   border-radius: 8px;
 }
 
 .member-photo {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
+  max-width: 100px;
+  max-height: 100px;
   object-fit: cover;
   border-radius: 8px;
   background-color: #cbd5e1;
   border: 2px solid #ffffff;
+  flex-shrink: 0;
 }
 
 /* --- Footer --- */
 footer {
   text-align: center;
-  padding: 1.5rem;
+  padding: 1.75rem;
   background-color: var(--primary-navy);
-  color: #cbd5e1;
+  color: #f1f5f9;
   font-size: 0.9rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
