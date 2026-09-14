@@ -3,62 +3,89 @@
    ========================================================================== */
 
 :root {
-  --bg-page: #f2f4f8;             /* Light Gray base */
-  --bg-card: #ffffff;             /* Crisp white container/card background */
-  --bg-light-blue: #eef5fc;       /* Light blue banner/card accent */
-  --border-light-blue: #cbdff5;   /* Light blue border outline */
+  --bg-page: #f2f4f8;           /* Light Gray base */
+  --bg-card: #ffffff;           /* Crisp white container/card background */
+  --bg-light-blue: #eef5fc;     /* Light blue banner/card accent */
+  --border-light-blue: #cbdff5;/* Light blue border outline */
   
-  --primary-navy: #002147;        /* TSU Deep Navy Blue */
-  --accent-blue: #1d4ed8;         /* Interactive Academic Blue */
-  --text-main: #1e293b;           /* High-contrast charcoal text */
-  --text-muted: #64748b;          /* Muted slate text for dates/authors */
-  --border-subtle: #e2e8f0;       /* Subtle dividers */
+  --primary-navy: #002147;     /* TSU Deep Navy Blue */
+  --accent-blue: #1d4ed8;       /* Interactive Academic Blue */
+  --text-main: #1e293b;        /* High-contrast charcoal text */
+  --text-muted: #64748b;       /* Muted slate text for dates/authors */
+  --border-subtle: #e2e8f0;    /* Subtle dividers */
   --shadow-card: 0 4px 12px rgba(0, 33, 71, 0.05);
 }
 
-/* --- Global Page Setup with Translucent Blue Meat Marbling Pattern --- */
-/* --- Global Page Setup: High-Precision Scientific Meat Marbling (BMS-Style) --- */
+/* --- Global Page Setup --- */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   margin: 0;
   color: var(--text-main);
   line-height: 1.6;
   background-color: var(--bg-page);
-
-  /* Layer 1 & 2: Soft ambient tissue glows */
-  /* Layer 3: High-resolution feathery intramuscular fat branching & micro-flecks */
   background-image: 
     radial-gradient(circle at 18% 22%, rgba(203, 223, 245, 0.55) 0%, transparent 42%),
     radial-gradient(circle at 82% 78%, rgba(219, 234, 254, 0.50) 0%, transparent 45%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E%3Cdefs%3E%3ClinearGradient id='marb' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='rgba(147, 197, 253, 0.40)'/%3E%3Cstop offset='100%25' stop-color='rgba(96, 165, 250, 0.15)'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg stroke='url(%23marb)' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- Primary Feathery Intramuscular Branches (Parallel to Grain) --%3E%3Cpath d='M20,60 C60,40 110,75 160,50 C185,38 210,55 240,45' stroke-width='1.8'/%3E%3Cpath d='M90,58 C115,42 135,62 150,53' stroke-width='1.1'/%3E%3Cpath d='M160,50 C180,68 205,62 225,75' stroke-width='1.0'/%3E%3Cpath d='M310,120 C350,95 400,130 450,110 C475,100 490,115 510,105' stroke-width='2.0'/%3E%3Cpath d='M370,112 C395,95 420,118 440,108' stroke-width='1.2'/%3E%3Cpath d='M50,280 C100,250 160,295 220,265 C260,245 290,270 330,255' stroke-width='2.2'/%3E%3Cpath d='M130,273 C160,252 185,278 205,268' stroke-width='1.3'/%3E%3Cpath d='M220,265 C245,285 270,278 290,295' stroke-width='1.1'/%3E%3Cpath d='M180,410 C220,385 270,420 320,398 C360,380 395,405 440,390' stroke-width='1.9'/%3E%3Cpath d='M250,405 C278,388 300,410 320,400' stroke-width='1.0'/%3E%3C/g%3E%3C!-- Secondary High-Precision Micro-Flecks & Spatial Lipid Clusters --%3E%3Cg fill='rgba(147, 197, 253, 0.35)'%3E%3Cpath d='M65,48 C78,44 85,52 72,55 Z'/%3E%3Cpath d='M175,44 C190,39 198,48 182,51 Z'/%3E%3Cpath d='M340,108 C358,100 368,112 350,116 Z'/%3E%3Cpath d='M110,268 C128,258 138,272 120,275 Z'/%3E%3Cpath d='M250,258 C268,248 278,262 260,265 Z'/%3E%3Cpath d='M230,398 C248,388 258,402 240,405 Z'/%3E%3Cpath d='M360,392 C378,382 388,396 370,399 Z'/%3E%3C!-- Micro-droplet histology dots --%3E%3Ccircle cx='42' cy='62' r='1.5'/%3E%3Ccircle cx='142' cy='56' r='1.8'/%3E%3Ccircle cx='325' cy='124' r='1.6'/%3E%3Ccircle cx='425' cy='114' r='1.4'/%3E%3Ccircle cx='82' cy='282' r='2.0'/%3E%3Ccircle cx='192' cy='272' r='1.5'/%3E%3Ccircle cx='302' cy='262' r='1.7'/%3E%3Ccircle cx='212' cy='412' r='1.6'/%3E%3Ccircle cx='338' cy='402' r='1.8'/%3E%3C/g%3E%3C/svg%3E");
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E%3Cdefs%3E%3ClinearGradient id='marb' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='rgba(147, 197, 253, 0.40)'/%3E%3Cstop offset='100%25' stop-color='rgba(96, 165, 250, 0.15)'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg stroke='url(%23marb)' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20,60 C60,40 110,75 160,50 C185,38 210,55 240,45' stroke-width='1.8'/%3E%3Cpath d='M90,58 C115,42 135,62 150,53' stroke-width='1.1'/%3E%3Cpath d='M160,50 C180,68 205,62 225,75' stroke-width='1.0'/%3E%3Cpath d='M310,120 C350,95 400,130 450,110 C475,100 490,115 510,105' stroke-width='2.0'/%3E%3Cpath d='M370,112 C395,95 420,118 440,108' stroke-width='1.2'/%3E%3Cpath d='M50,280 C100,250 160,295 220,265 C260,245 290,270 330,255' stroke-width='2.2'/%3E%3Cpath d='M130,273 C160,252 185,278 205,268' stroke-width='1.3'/%3E%3Cpath d='M220,265 C245,285 270,278 290,295' stroke-width='1.1'/%3E%3Cpath d='M180,410 C220,385 270,420 320,398 C360,380 395,405 440,390' stroke-width='1.9'/%3E%3Cpath d='M250,405 C278,388 300,410 320,400' stroke-width='1.0'/%3E%3C/g%3E%3Cg fill='rgba(147, 197, 253, 0.35)'%3E%3Cpath d='M65,48 C78,44 85,52 72,55 Z'/%3E%3Cpath d='M175,44 C190,39 198,48 182,51 Z'/%3E%3Cpath d='M340,108 C358,100 368,112 350,116 Z'/%3E%3Cpath d='M110,268 C128,258 138,272 120,275 Z'/%3E%3Cpath d='M250,258 C268,248 278,262 260,265 Z'/%3E%3Cpath d='M230,398 C248,388 258,402 240,405 Z'/%3E%3Cpath d='M360,392 C378,382 388,396 370,399 Z'/%3E%3Ccircle cx='42' cy='62' r='1.5'/%3E%3Ccircle cx='142' cy='56' r='1.8'/%3E%3Ccircle cx='325' cy='124' r='1.6'/%3E%3Ccircle cx='425' cy='114' r='1.4'/%3E%3Ccircle cx='82' cy='282' r='2.0'/%3E%3Ccircle cx='192' cy='272' r='1.5'/%3E%3Ccircle cx='302' cy='262' r='1.7'/%3E%3Ccircle cx='212' cy='412' r='1.6'/%3E%3Ccircle cx='338' cy='402' r='1.8'/%3E%3C/g%3E%3C/svg%3E");
   background-attachment: fixed;
   background-repeat: repeat;
 }
 
-/* --- Header & Navigation --- */
-/* --- Apple-Style Translucent Sticky Header --- */
+/* --- Header & Navigation (Single Row Layout) --- */
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  
-  /* Translucent Dark Blue (Primary Navy at ~82% Opacity) */
   background-color: rgba(15, 34, 64, 0.82); 
-  
-  /* Apple Frosted-Glass Backdrop Blur */
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  
-  /* Subtle bottom border to define edge against page content */
   border-bottom: 1px solid rgba(203, 223, 245, 0.18);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  
-  /* Smooth interaction transition */
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  
+  /* Flexbox alignment for single line header */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 2rem;
 }
 
-/* Optional: Enhances tab contrast over blurred content */
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+.brand-title {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin: 0;
+  white-space: nowrap;
+}
+
+header nav {
+  margin-left: auto;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
 header nav ul li a {
+  padding: 0.4rem 0.6rem;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
 
@@ -67,28 +94,15 @@ header nav ul li a:hover {
   border-radius: 4px;
 }
 
-.logo {
-  height: 60px;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 0.5rem;
-  display: flex;
-  gap: 1.5rem;
-}
-
 nav a {
   color: #cfe2ff;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.2s ease;
+  font-size: 0.95rem;
 }
 
 nav a:hover {
   color: #ffffff;
-  text-decoration: underline;
 }
 
 /* --- Main Layout Container --- */
@@ -100,6 +114,69 @@ main {
   border-radius: 10px;
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-card);
+}
+
+/* --- Publication Section Cards with Left Thumbnail Tab --- */
+.publication-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  background-color: var(--bg-card);
+  border-left: 4px solid var(--primary-navy);
+  border-top: 1px solid var(--border-subtle);
+  border-right: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  transition: all 0.2s ease;
+}
+
+.publication-card:hover {
+  background-color: var(--bg-light-blue);
+  border-left-color: var(--accent-blue);
+  box-shadow: 0 4px 12px rgba(0, 33, 71, 0.08);
+}
+
+/* Left side tab thumbnail image */
+.pub-tab-thumb {
+  flex-shrink: 0;
+  width: 65px;
+  height: 85px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--border-light-blue);
+  box-shadow: 0 2px 6px rgba(0, 33, 71, 0.08);
+  background-color: #cbd5e1;
+}
+
+.pub-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.citation {
+  margin: 0 0 0.6rem 0;
+  color: var(--text-main);
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.authors {
+  font-weight: 600;
+  color: var(--primary-navy);
+}
+
+.paper-title {
+  font-style: italic;
+  color: var(--text-main);
+}
+
+.venue {
+  color: var(--text-muted);
 }
 
 /* --- Member & Lab Profile Cards --- */
@@ -133,67 +210,6 @@ main {
 .photo-box {
   text-align: center;
   margin-top: 1rem;
-}
-
-/* --- Publication Section Cards --- */
-.pub-card {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  align-items: center;
-  padding: 1rem;
-  background-color: var(--bg-light-blue);
-  border: 1px solid var(--border-light-blue);
-  border-radius: 8px;
-}
-
-.pub-photo {
-  width: 120px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 8px;
-  background-color: #cbd5e1;
-}
-
-.publication-card {
-  margin-bottom: 1.5rem;
-  padding: 1.2rem 1.5rem;
-  background-color: var(--bg-card);
-  border-left: 4px solid var(--primary-navy);
-  border-top: 1px solid var(--border-subtle);
-  border-right: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
-  border-radius: 0 8px 8px 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  transition: all 0.2s ease;
-}
-
-.publication-card:hover {
-  background-color: var(--bg-light-blue);
-  border-left-color: var(--accent-blue);
-  box-shadow: 0 4px 12px rgba(0, 33, 71, 0.08);
-}
-
-.citation {
-  margin: 0 0 0.85rem 0;
-  color: var(--text-main);
-  font-size: 0.98rem;
-  line-height: 1.65;
-}
-
-.authors {
-  font-weight: 600;
-  color: var(--primary-navy);
-}
-
-.paper-title {
-  font-style: italic;
-  color: var(--text-main);
-}
-
-.venue {
-  color: var(--text-muted);
 }
 
 /* --- Poster Cards --- */
@@ -364,7 +380,6 @@ main {
   height: 14px;
 }
 
-/* Badge & Button Color Schemes */
 .poster-btn.primary,
 .pub-badge.poster {
   background-color: var(--bg-light-blue);
