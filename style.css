@@ -1,9 +1,9 @@
 /* ==========================================================================
-   TSU Meat Science - Unified Academic Color Palette
+   TSU Meat Science - Unified Academic Color Palette & Marbled Background
    ========================================================================== */
 
 :root {
-  --bg-page: #f4f6f9;             /* Soft Light Gray page background */
+  --bg-page: #f2f4f8;             /* Light Gray base */
   --bg-card: #ffffff;             /* Crisp white container/card background */
   --bg-light-blue: #eef5fc;       /* Light blue banner/card accent */
   --border-light-blue: #cbdff5;   /* Light blue border outline */
@@ -16,13 +16,20 @@
   --shadow-card: 0 4px 12px rgba(0, 33, 71, 0.05);
 }
 
-/* --- Global Page Setup --- */
+/* --- Global Page Setup with Translucent Blue Meat Marbling Pattern --- */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   margin: 0;
-  background-color: var(--bg-page);
   color: var(--text-main);
   line-height: 1.6;
+  background-color: var(--bg-page);
+  /* Light blue organic radial glows + transparent SVG marbling vein pattern */
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(203, 223, 245, 0.45) 0%, transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(219, 234, 254, 0.40) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cg fill='none' stroke='rgba(147, 197, 253, 0.22)' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M-10,60 Q50,110 130,50 T280,100 T410,40'/%3E%3Cpath d='M-10,160 Q80,110 160,200 T320,150 T410,220'/%3E%3Cpath d='M-10,280 Q70,230 180,310 T310,250 T410,340'/%3E%3Cpath d='M30,-10 Q110,80 50,190 T120,350 T70,410'/%3E%3Cpath d='M240,-10 Q320,90 270,210 T350,360 T290,410'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-repeat: repeat;
 }
 
 /* --- Header & Navigation --- */
@@ -49,14 +56,14 @@ nav ul {
 }
 
 nav a {
-  color: #e2e8f0;
+  color: #cfe2ff;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s ease;
 }
 
 nav a:hover {
-  color: #93c5fd; /* Soft blue highlight */
+  color: #ffffff;
   text-decoration: underline;
 }
 
