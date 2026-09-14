@@ -1,17 +1,39 @@
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  margin: 0;
-  background-color: #f5f5f5;
-  color: #333;
+/* ==========================================================================
+   TSU Meat Science - Unified Academic Color Palette
+   ========================================================================== */
+
+:root {
+  --bg-page: #f4f6f9;             /* Soft Light Gray page background */
+  --bg-card: #ffffff;             /* Crisp white container/card background */
+  --bg-light-blue: #eef5fc;       /* Light blue banner/card accent */
+  --border-light-blue: #cbdff5;   /* Light blue border outline */
+  
+  --primary-navy: #002147;        /* TSU Deep Navy Blue */
+  --accent-blue: #1d4ed8;         /* Interactive Academic Blue */
+  --text-main: #1e293b;           /* High-contrast charcoal text */
+  --text-muted: #64748b;          /* Muted slate text for dates/authors */
+  --border-subtle: #e2e8f0;       /* Subtle dividers */
+  --shadow-card: 0 4px 12px rgba(0, 33, 71, 0.05);
 }
 
+/* --- Global Page Setup --- */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* --- Header & Navigation --- */
 header {
-  background-color: #002147;
-  color: white;
+  background-color: var(--primary-navy);
+  color: #ffffff;
   padding: 1.2rem;
   display: flex;
   align-items: center;
   gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -27,28 +49,38 @@ nav ul {
 }
 
 nav a {
-  color: #cfe2ff;
+  color: #e2e8f0;
   text-decoration: none;
   font-weight: 600;
+  transition: color 0.2s ease;
 }
 
 nav a:hover {
+  color: #93c5fd; /* Soft blue highlight */
   text-decoration: underline;
 }
 
+/* --- Main Layout Container --- */
 main {
-  background: white;
-  max-width: 900px;
-  margin: 1.5rem auto;
-  padding: 2rem;
-  border-radius: 8px;
+  background: var(--bg-card);
+  max-width: 950px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-card);
 }
 
+/* --- Member & Lab Profile Cards --- */
 .member-card {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
   margin-bottom: 1.5rem;
   align-items: center;
+  padding: 1rem;
+  background-color: var(--bg-light-blue);
+  border: 1px solid var(--border-light-blue);
+  border-radius: 8px;
 }
 
 .member-photo {
@@ -56,13 +88,15 @@ main {
   height: 120px;
   object-fit: cover;
   border-radius: 8px;
-  background-color: #ddd;
+  background-color: #cbd5e1;
+  border: 2px solid #ffffff;
 }
 
 .lab-photo {
   width: 100%;
   max-width: 600px;
   border-radius: 8px;
+  border: 1px solid var(--border-subtle);
 }
 
 .photo-box {
@@ -70,17 +104,16 @@ main {
   margin-top: 1rem;
 }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #e0e0e0;
-  font-size: 0.9rem;
-}
+/* --- Publication Section Cards --- */
 .pub-card {
   display: flex;
   gap: 1rem;
   margin-bottom: 1.5rem;
   align-items: center;
+  padding: 1rem;
+  background-color: var(--bg-light-blue);
+  border: 1px solid var(--border-light-blue);
+  border-radius: 8px;
 }
 
 .pub-photo {
@@ -88,18 +121,59 @@ footer {
   height: 160px;
   object-fit: cover;
   border-radius: 8px;
-  background-color: #ddd;
+  background-color: #cbd5e1;
 }
 
-/* Container Card */
+.publication-card {
+  margin-bottom: 1.5rem;
+  padding: 1.2rem 1.5rem;
+  background-color: var(--bg-card);
+  border-left: 4px solid var(--primary-navy);
+  border-top: 1px solid var(--border-subtle);
+  border-right: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  transition: all 0.2s ease;
+}
+
+.publication-card:hover {
+  background-color: var(--bg-light-blue);
+  border-left-color: var(--accent-blue);
+  box-shadow: 0 4px 12px rgba(0, 33, 71, 0.08);
+}
+
+.citation {
+  margin: 0 0 0.85rem 0;
+  color: var(--text-main);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.authors {
+  font-weight: 600;
+  color: var(--primary-navy);
+}
+
+.paper-title {
+  font-style: italic;
+  color: var(--text-main);
+}
+
+.venue {
+  color: var(--text-muted);
+}
+
+/* --- Poster Cards --- */
 .poster-card {
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light-blue);
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-card);
   margin-bottom: 1.5rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -113,14 +187,13 @@ footer {
 
 .poster-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 16px rgba(0, 33, 71, 0.1);
 }
 
-/* Thumbnail Section */
 .poster-thumbnail {
   position: relative;
   width: 100%;
-  background-color: #0f172a;
+  background-color: var(--primary-navy);
   overflow: hidden;
 }
 
@@ -144,14 +217,13 @@ footer {
   opacity: 0.85;
 }
 
-/* Hover Overlay for Poster Preview */
 .poster-overlay {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(15, 23, 42, 0.55);
+  background: rgba(0, 33, 71, 0.65);
   opacity: 0;
   text-decoration: none;
   transition: opacity 0.2s ease;
@@ -163,7 +235,6 @@ footer {
 
 .overlay-text {
   color: #ffffff;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   padding: 0.35rem 0.75rem;
@@ -173,7 +244,6 @@ footer {
   backdrop-filter: blur(4px);
 }
 
-/* Content Details */
 .poster-content {
   padding: 1.2rem 1.4rem;
   display: flex;
@@ -190,22 +260,20 @@ footer {
 }
 
 .poster-tag {
-  background-color: #ecfdf5;
-  color: #047857;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-light-blue);
+  color: var(--accent-blue);
   font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   padding: 0.15rem 0.45rem;
   border-radius: 4px;
-  border: 1px solid #a7f3d0;
+  border: 1px solid var(--border-light-blue);
 }
 
 .session-badge {
   background-color: #f1f5f9;
-  color: #475569;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text-muted);
   font-size: 0.7rem;
   font-weight: 600;
   padding: 0.15rem 0.45rem;
@@ -217,53 +285,102 @@ footer {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1.1rem;
   line-height: 1.35;
-  color: #0f172a;
+  color: var(--primary-navy);
 }
 
 .poster-authors {
   margin: 0 0 0.3rem 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.88rem;
-  color: #475569;
+  color: var(--text-muted);
 }
 
 .highlight-author {
-  color: #0f172a;
+  color: var(--primary-navy);
   font-weight: 600;
 }
 
 .poster-venue {
   margin: 0 0 1rem 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.83rem;
-  color: #64748b;
+  color: var(--text-muted);
 }
 
-/* Action Button Toolbar */
-.poster-actions {
+/* --- Action Buttons Toolbar --- */
+.poster-actions,
+.pub-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.5rem;
+  align-items: center;
   margin-top: auto;
 }
 
-.poster-btn {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 0.75rem;
+.poster-btn,
+.pub-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
   font-weight: 600;
   text-decoration: none;
   padding: 0.3rem 0.65rem;
   border-radius: 4px;
-  transition: all 0.15s ease;
+  transition: all 0.15s ease-in-out;
 }
 
-.poster-btn.primary {
-  background-color: #047857;
+.badge-icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* Badge & Button Color Schemes */
+.poster-btn.primary,
+.pub-badge.poster {
+  background-color: var(--bg-light-blue);
+  color: var(--primary-navy);
+  border: 1px solid var(--border-light-blue);
+}
+
+.poster-btn.primary:hover,
+.pub-badge.poster:hover {
+  background-color: var(--primary-navy);
+  color: #ffffff;
+  border-color: var(--primary-navy);
+}
+
+.pub-badge.pdf {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+}
+
+.pub-badge.pdf:hover {
+  background-color: #b91c1c;
   color: #ffffff;
 }
 
-.poster-btn.primary:hover {
-  background-color: #065f46;
+.poster-btn.outline,
+.pub-badge.doi {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.poster-btn.outline:hover,
+.pub-badge.doi:hover {
+  background-color: #1d4ed8;
+  color: #ffffff;
+}
+
+.pub-badge.slides {
+  background-color: #faf5ff;
+  color: #6b21a8;
+  border: 1px solid #e9d5ff;
+}
+
+.pub-badge.slides:hover {
+  background-color: #6b21a8;
+  color: #ffffff;
 }
 
 .poster-btn.secondary {
@@ -274,144 +391,17 @@ footer {
 
 .poster-btn.secondary:hover {
   background-color: #e2e8f0;
-  color: #0f172a;
+  color: var(--primary-navy);
 }
 
-.poster-btn.outline {
-  background-color: transparent;
-  color: #2563eb;
-  border: 1px solid #bfdbfe;
-}
-
-.poster-btn.outline:hover {
-  background-color: #eff6ff;
-}
-
-/* Container Card */
-.publication-card {
-  margin-bottom: 1.5rem;
-  padding: 1.2rem 1.5rem;
-  background-color: #ffffff;
-  border-left: 4px solid #0f172a; /* Slate navy primary accent */
-  border-radius: 0 8px 8px 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  font-family: "Georgia", "Times New Roman", Times, serif;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.publication-card:hover {
-  border-left-color: #2563eb; /* Active highlight on hover */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-/* Citation Body */
-.citation {
-  margin: 0 0 0.85rem 0;
-  color: #334155;
-  font-size: 0.98rem;
-  line-height: 1.65;
-}
-
-.authors {
-  font-weight: 600;
-  color: #0f172a;
-}
-
-.paper-title {
-  font-style: italic;
-  color: #1e293b;
-}
-
-.venue {
-  color: #64748b;
-}
-
-/* Action Badges Layout */
-.pub-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  align-items: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
-/* Base Badge Style */
-.pub-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.25rem 0.65rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: all 0.15s ease-in-out;
-}
-
-.badge-icon {
-  width: 14px;
-  height: 14px;
-}
-
-/* POSTER BADGE (Teal / Emerald Theme) */
-.pub-badge.poster {
-  background-color: #ecfdf5;
-  color: #047857;
-  border: 1px solid #a7f3d0;
-}
-
-.pub-badge.poster:hover {
-  background-color: #047857;
-  color: #ffffff;
-  border-color: #047857;
-  transform: translateY(-1px);
-}
-
-/* PDF BADGE (Deep Maroon / Red Theme) */
-.pub-badge.pdf {
-  background-color: #fef2f2;
-  color: #b91c1c;
-  border: 1px solid #fca5a5;
-}
-
-.pub-badge.pdf:hover {
-  background-color: #b91c1c;
-  color: #ffffff;
-  border-color: #b91c1c;
-  transform: translateY(-1px);
-}
-
-/* DOI BADGE (Classic Academic Blue Theme) */
-.pub-badge.doi {
-  background-color: #eff6ff;
-  color: #1d4ed8;
-  border: 1px solid #bfdbfe;
-}
-
-.pub-badge.doi:hover {
-  background-color: #1d4ed8;
-  color: #ffffff;
-  border-color: #1d4ed8;
-  transform: translateY(-1px);
-}
-
-/* SLIDES BADGE (Purple Theme) */
-.pub-badge.slides {
-  background-color: #faf5ff;
-  color: #6b21a8;
-  border: 1px solid #e9d5ff;
-}
-
-.pub-badge.slides:hover {
-  background-color: #6b21a8;
-  color: #ffffff;
-  border-color: #6b21a8;
-  transform: translateY(-1px);
-}
+/* --- Callout & Donate Section --- */
 .donate-section {
   text-align: center;
   margin: 30px 0;
+  padding: 2rem;
+  background-color: var(--bg-light-blue);
+  border-radius: 8px;
+  border: 1px solid var(--border-light-blue);
 }
 
 .lab-donate-btn {
@@ -420,7 +410,7 @@ footer {
   justify-content: center;
   gap: 8px;
   padding: 12px 24px;
-  background-color: #002d62; /* TSU Blue */
+  background-color: var(--primary-navy);
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
@@ -429,5 +419,15 @@ footer {
 }
 
 .lab-donate-btn:hover {
-  background-color: #001f44;
+  background-color: #001530;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: var(--primary-navy);
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  margin-top: 2rem;
 }
