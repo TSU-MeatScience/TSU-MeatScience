@@ -15,7 +15,6 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
-![TSU Visitors](https://shields.io)
-![TSU Visitors](https://laobi.icu)
+
 
 
