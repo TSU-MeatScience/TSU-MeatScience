@@ -286,3 +286,126 @@ footer {
 .poster-btn.outline:hover {
   background-color: #eff6ff;
 }
+
+/* Container Card */
+.publication-card {
+  margin-bottom: 1.5rem;
+  padding: 1.2rem 1.5rem;
+  background-color: #ffffff;
+  border-left: 4px solid #0f172a; /* Slate navy primary accent */
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  font-family: "Georgia", "Times New Roman", Times, serif;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.publication-card:hover {
+  border-left-color: #2563eb; /* Active highlight on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Citation Body */
+.citation {
+  margin: 0 0 0.85rem 0;
+  color: #334155;
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.authors {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.paper-title {
+  font-style: italic;
+  color: #1e293b;
+}
+
+.venue {
+  color: #64748b;
+}
+
+/* Action Badges Layout */
+.pub-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Base Badge Style */
+.pub-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.15s ease-in-out;
+}
+
+.badge-icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* POSTER BADGE (Teal / Emerald Theme) */
+.pub-badge.poster {
+  background-color: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.pub-badge.poster:hover {
+  background-color: #047857;
+  color: #ffffff;
+  border-color: #047857;
+  transform: translateY(-1px);
+}
+
+/* PDF BADGE (Deep Maroon / Red Theme) */
+.pub-badge.pdf {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+}
+
+.pub-badge.pdf:hover {
+  background-color: #b91c1c;
+  color: #ffffff;
+  border-color: #b91c1c;
+  transform: translateY(-1px);
+}
+
+/* DOI BADGE (Classic Academic Blue Theme) */
+.pub-badge.doi {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.pub-badge.doi:hover {
+  background-color: #1d4ed8;
+  color: #ffffff;
+  border-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* SLIDES BADGE (Purple Theme) */
+.pub-badge.slides {
+  background-color: #faf5ff;
+  color: #6b21a8;
+  border: 1px solid #e9d5ff;
+}
+
+.pub-badge.slides:hover {
+  background-color: #6b21a8;
+  color: #ffffff;
+  border-color: #6b21a8;
+  transform: translateY(-1px);
+}
