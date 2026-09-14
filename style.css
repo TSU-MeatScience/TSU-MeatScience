@@ -36,14 +36,35 @@ body {
 }
 
 /* --- Header & Navigation --- */
+/* --- Apple-Style Translucent Sticky Header --- */
 header {
-  background-color: var(--primary-navy);
-  color: #ffffff;
-  padding: 1.2rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  
+  /* Translucent Dark Blue (Primary Navy at ~82% Opacity) */
+  background-color: rgba(15, 34, 64, 0.82); 
+  
+  /* Apple Frosted-Glass Backdrop Blur */
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  
+  /* Subtle bottom border to define edge against page content */
+  border-bottom: 1px solid rgba(203, 223, 245, 0.18);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  
+  /* Smooth interaction transition */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Optional: Enhances tab contrast over blurred content */
+header nav ul li a {
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+header nav ul li a:hover {
+  background-color: rgba(203, 223, 245, 0.15);
+  border-radius: 4px;
 }
 
 .logo {
