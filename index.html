@@ -1,7 +1,4 @@
-
-
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,12 +8,14 @@
 </head>
 
 <body>
-<header>
-  <img src="images/Tennessee_State_Athletics_logo.svg" alt="TSU Logo" class="logo">
-  <h1>TSU Meat Science Laboratory</h1>
+<header id="siteHeader">
+  <div class="header-brand" style="display: flex; align-items: center; gap: 1rem;">
+    <img src="images/Tennessee_State_Athletics_logo.svg" alt="TSU Logo" class="logo">
+    <h1 style="font-size: 1.2rem; margin: 0; color: #ffffff; font-weight: 700; white-space: nowrap;">TSU Meat Science Laboratory</h1>
+  </div>
   <nav>
     <ul>
-      <li><a href="index.html">Introduction</a></li>
+      <li><a href="index.html" class="active">Introduction</a></li>
       <li><a href="members.html">Lab Members</a></li>
       <li><a href="inquiry.html">Inquiries</a></li>
       <li><a href="publications.html">Publications</a></li>
@@ -29,7 +28,7 @@
   <div>
     <h2 style="font-family: Georgia, serif; color: var(--primary-navy); margin-bottom: 0.75rem;">About us</h2>
     <p>
-      The <strong>TSU Meat Science Laboratory</strong> operates at the intersection of agricultural innovation, analytical chemistry, and biomedical science. We applies high-resolution spatial nutrition analysis and metabolomics to address critical questions in food quality, safety, and human health—including novel frontiers in diet related cancer research.
+      The <strong>TSU Meat Science Laboratory</strong> operates at the intersection of agricultural innovation, analytical chemistry, and biomedical science. We apply high-resolution spatial nutrition analysis and metabolomics to address critical questions in food quality, safety, and human health—including novel frontiers in diet related cancer research.
     </p>
     <p style="margin-top: 0.8rem;">
       By leveraging strategic collaborations across institutions, we apply cutting-edge chemical and biological instrumentation to meat science research.
@@ -46,25 +45,25 @@
 </section>
 
   <section class="publication-card">
-    <h2 style="font-family: Georgia, serif; color: var(--primary-navy); margin-bottom: 1rem;">Lab Photos </h2>
+    <h2 style="font-family: Georgia, serif; color: var(--primary-navy); margin-bottom: 1rem;">Lab Photos</h2>
     
     <div class="photo-box">
-      <p><em>Tennessee State Fair 2026, Lebanon, TN </em></p>
+      <p><em>Tennessee State Fair 2026, Lebanon, TN</em></p>
       <img src="images/IMG_5618.jpeg" alt="Lab Photo" class="lab-photo">
     </div>
 
     <div class="photo-box">
-      <p><em>RMC 2026 Lebanon, Amarillo, TX </em></p>
+      <p><em>RMC 2026 Lebanon, Amarillo, TX</em></p>
       <img src="images/TX.jpeg" alt="Lab Photo" class="lab-photo">
     </div>
 
     <div class="photo-box">
-      <p><em>IFT 2026, Chicago, IL </em></p>
+      <p><em>IFT 2026, Chicago, IL</em></p>
       <img src="images/IFT2026.jpeg" alt="Lab Photo" class="lab-photo">
     </div>
 
     <div class="photo-box">
-      <p><em>UW-Madison Visit, Milwaukee, WI </em></p>
+      <p><em>UW-Madison Visit, Milwaukee, WI</em></p>
       <img src="images/Mil.jpeg" alt="Lab Photo" class="lab-photo">
     </div>
   </section>
@@ -82,5 +81,17 @@
 <footer>
   <p>&copy; 2026 TSU Meat Science Laboratory</p>
 </footer>
+
+<!-- Scroll trigger script for transparent sticky header -->
+<script>
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('siteHeader');
+    if (window.scrollY > 40) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+</script>
 </body>
 </html>
