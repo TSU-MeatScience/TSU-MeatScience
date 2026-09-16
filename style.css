@@ -133,8 +133,8 @@ main {
 }
 
 .member-photo {
-  width: 180px;
-  height: 180px;
+  width: 186px;
+  height: 186px;
   object-fit: cover;
   border-radius: 8px;
   background-color: #cbd5e1;
