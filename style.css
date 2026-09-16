@@ -78,6 +78,7 @@ nav a {
   display: inline-block;
   border: 1px solid transparent;
   transition: all 0.35s ease;
+  cursor: pointer;
 }
 
 /* Hover = glassy highlight */
@@ -95,7 +96,10 @@ nav a.active {
   border: 1px solid rgba(255,255,255,0.10);
   color: #e6eeff;
 }
-
+nav a:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
 
 /* --- Scrolled State: Small & Semi-Transparent Navy --- */
 header.scrolled {
