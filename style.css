@@ -77,7 +77,7 @@ nav a {
   border-radius: 8px;
   display: inline-block;
   border: 1px solid transparent;  /* ADD THIS */
-  transition: all 0.25s ease;
+  transition: all 0.35s ease;
 }
 
 nav a:hover {
