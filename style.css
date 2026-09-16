@@ -510,8 +510,9 @@ footer {
   background-color: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: 8px;
-  box-shadow: var(--shadow-card);
+  overflow: hidden;   /* keeps image inside card */
 }
+
 
 .news-date {
   display: inline-block;
@@ -533,11 +534,10 @@ footer {
 
 .news-image {
   width: 100%;
-  max-width: 750px;
+  height: auto;
   display: block;
-  margin: 1rem auto;
+  margin: 1rem 0;
   border-radius: 8px;
-  border: 1px solid var(--border-subtle);
 }
 
 .news-caption {
