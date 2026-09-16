@@ -114,7 +114,7 @@ main {
 /* --- Member & Lab Profile Cards --- */
 .member-card {
   display: flex;
-  gap: 1.2rem;
+  gap: 1.4rem;
   margin-bottom: 1.5rem;
   align-items: center;
   padding: 1rem;
@@ -132,12 +132,13 @@ main {
 }
 
 .member-photo {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   border-radius: 8px;
   background-color: #cbd5e1;
   border: 2px solid #ffffff;
+  flex-shrink: 0;
 }
 
 .lab-photo {
