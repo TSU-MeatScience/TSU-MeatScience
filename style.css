@@ -77,8 +77,10 @@ nav a {
 }
 
 nav a:hover {
+  background-color: rgba(203, 223, 245, 0.18);
+  backdrop-filter: blur(4px);
   color: #ffffff;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* --- Scrolled State: Small & Semi-Transparent Navy --- */
