@@ -76,23 +76,26 @@ nav a {
   padding: 0.6rem 1rem;
   border-radius: 8px;
   display: inline-block;
-  border: 1px solid transparent;  /* ADD THIS */
+  border: 1px solid transparent;
   transition: all 0.35s ease;
 }
 
+/* Hover = glassy highlight */
 nav a:hover {
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.22);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   color: #ffffff;
-  text-decoration: none;
 }
 
+/* Active = subtle academic highlight */
 nav a.active {
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: #e6eeff;
 }
+
 
 /* --- Scrolled State: Small & Semi-Transparent Navy --- */
 header.scrolled {
