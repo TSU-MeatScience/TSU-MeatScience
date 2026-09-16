@@ -564,4 +564,14 @@ footer {
   margin-bottom: 1rem;
 }
 
+.news-card {
+  transition: all 0.3s ease;
+}
 
+.news-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 12px 24px rgba(0,33,71,0.12);
+}
