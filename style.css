@@ -516,13 +516,16 @@ footer {
 
 .news-date {
   display: inline-block;
-  background-color: var(--primary-navy);
-  color: white;
+  background-color: #C5050C; /* UW Red */
+  color: #ffffff;
   font-size: 0.8rem;
-  font-weight: 600;
-  padding: 0.3rem 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.8rem;
   border-radius: 4px;
   margin-bottom: 0.75rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px rgba(197, 5, 12, 0.25);
 }
 
 .news-title {
