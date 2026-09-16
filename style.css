@@ -69,6 +69,7 @@ nav ul {
   align-items: center;
 }
 
+/* Base navigation styling */
 nav a {
   color: #cfe2ff;
   text-decoration: none;
@@ -81,21 +82,25 @@ nav a {
   cursor: pointer;
 }
 
-/* Hover = glassy highlight */
-nav a:hover {
-  background: rgba(255,255,255,0.18);
-  border: 1px solid rgba(255,255,255,0.22);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #ffffff;
+/* 1. Only apply hover effects if the device actually uses a mouse/pointer */
+@media (hover: hover) and (pointer: fine) {
+  nav a:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #ffffff;
+  }
 }
 
-/* Active = subtle academic highlight */
+/* 2. Distinct styling for the currently open/active tab */
 nav a.active {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-  color: #e6eeff;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-weight: 700; /* Optional: make active slightly bolder to stand out */
 }
+
 nav a:focus-visible {
   outline: 2px solid #ffffff;
   outline-offset: 3px;
