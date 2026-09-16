@@ -220,11 +220,10 @@ nav a {
 /* Active navigation item */
 
 nav a.active {
-  background: rgba(255, 255, 255, 0.10);
-  border-color: rgba(255, 255, 255, 0.15);
-
-  color: #ffffff;
-  font-weight: 700;
+  background: transparent;
+  border-color: transparent;
+  color: #cfe2ff;
+  font-weight: 600;
 }
 
 
@@ -236,19 +235,13 @@ nav a.active {
  */
 
 @media (hover: hover) and (pointer: fine) {
-
   nav a:hover {
     background: rgba(255, 255, 255, 0.18);
-
-    border-color:
-      rgba(255, 255, 255, 0.22);
-
+    border-color: rgba(255, 255, 255, 0.22);
     color: #ffffff;
-
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
   }
-
 }
 
 
