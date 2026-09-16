@@ -123,6 +123,14 @@ main {
   border-radius: 8px;
 }
 
+.member-card h4 {
+  margin: 0.75rem 0 0.1rem 0;
+}
+
+.member-card h4 + p {
+  margin: 0;
+}
+
 .member-photo {
   width: 120px;
   height: 120px;
