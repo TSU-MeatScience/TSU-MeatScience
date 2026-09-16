@@ -20,10 +20,10 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   margin: 0;
+  padding-top: 100px; /* Offset page content so top isn't cut off by fixed header */
   color: var(--text-main);
   line-height: 1.6;
   background-color: var(--bg-page);
-  /* Light blue organic radial glows + transparent SVG marbling vein pattern */
   background-image: 
     radial-gradient(circle at 15% 20%, rgba(203, 223, 245, 0.45) 0%, transparent 45%),
     radial-gradient(circle at 85% 75%, rgba(219, 234, 254, 0.40) 0%, transparent 50%),
@@ -33,7 +33,6 @@ body {
 }
 
 /* --- Header & Navigation --- */
-/* --- Sticky & Translucent Header & Navigation --- */
 header {
   position: fixed;
   top: 0;
@@ -41,8 +40,6 @@ header {
   width: 100%;
   z-index: 1000;
   box-sizing: border-box;
-  
-  /* Initial State */
   background-color: var(--primary-navy);
   color: #ffffff;
   padding: 1.2rem 2rem;
@@ -57,7 +54,7 @@ header {
 .logo {
   height: 60px;
   width: auto;
-  transition: height 0.3s ease-in-out; /* Smooth logo shrink */
+  transition: height 0.3s ease-in-out;
 }
 
 nav ul {
@@ -69,7 +66,6 @@ nav ul {
   align-items: center;
 }
 
-/* Base navigation styling */
 nav a {
   color: #cfe2ff;
   text-decoration: none;
@@ -82,7 +78,7 @@ nav a {
   cursor: pointer;
 }
 
-/* 1. Only apply hover effects if the device actually uses a mouse/pointer */
+/* Only apply hover effects on mouse/pointer devices */
 @media (hover: hover) and (pointer: fine) {
   nav a:hover {
     background: rgba(255, 255, 255, 0.18);
@@ -93,12 +89,11 @@ nav a {
   }
 }
 
-/* 2. Distinct styling for the currently open/active tab */
 nav a.active {
   background: rgba(255, 255, 255, 0.10);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #ffffff;
-  font-weight: 700; /* Optional: make active slightly bolder to stand out */
+  font-weight: 700;
 }
 
 nav a:focus-visible {
@@ -106,23 +101,17 @@ nav a:focus-visible {
   outline-offset: 3px;
 }
 
-/* --- Scrolled State: Small & Semi-Transparent Navy --- */
 header.scrolled {
-  padding: 0.5rem 2rem; /* Reduces header height */
-  background-color: rgba(0, 33, 71, 0.66); /* Semi-transparent TSU Navy */
-  backdrop-filter: blur(12px); /* Glassmorphism effect */
+  padding: 0.5rem 2rem;
+  background-color: rgba(0, 33, 71, 0.66);
+  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
   border-bottom: 1px solid rgba(203, 223, 245, 0.2);
 }
 
 header.scrolled .logo {
-  height: 38px; /* Compact logo size on scroll */
-}
-
-/* Offset page content so top isn't cut off by fixed header */
-body {
-  padding-top: 100px;
+  height: 38px;
 }
 
 /* --- Main Layout Container --- */
@@ -137,12 +126,11 @@ main {
 }
 
 /* --- Member & Lab Profile Cards --- */
-
 .member-card {
   display: flex;
   gap: 1.9rem;
   margin-bottom: 1.5rem;
-  align-items: flex-start; /* changed from center */
+  align-items: flex-start;
   padding: 1.4rem;
   background-color: var(--bg-light-blue);
   border: 1px solid var(--border-light-blue);
@@ -497,7 +485,7 @@ main {
   background-color: #001530;
 }
 
-/* --- Footer --- */
+/* --- Footer & Social --- */
 footer {
   text-align: center;
   padding: 1.5rem;
@@ -506,8 +494,6 @@ footer {
   font-size: 0.9rem;
   margin-top: 2rem;
 }
-
-/* --- Social--- */
 
 .social-links {
   margin-top: 0.5rem;
@@ -527,21 +513,20 @@ footer {
   opacity: 0.7;
 }
 
-/* News Cards */
-
+/* --- News Cards --- */
 .news-card {
   margin-bottom: 2rem;
   padding: 1.5rem;
   background-color: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: 8px;
-  overflow: hidden;   /* keeps image inside card */
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
-
 
 .news-date {
   display: inline-block;
-  background-color: #C5050C; /* UW Red */
+  background-color: #C5050C;
   color: #ffffff;
   font-size: 0.8rem;
   font-weight: 700;
@@ -576,14 +561,10 @@ footer {
   margin-bottom: 1rem;
 }
 
-.news-card {
-  transition: all 0.3s ease;
-}
-
 .news-card:hover {
   transform: translateY(-4px);
-  background: rgba(255,255,255,0.75);
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 12px 24px rgba(0,33,71,0.12);
+  box-shadow: 0 12px 24px rgba(0, 33, 71, 0.12);
 }
