@@ -17,6 +17,6 @@ Here are some ideas to get you started:
 -->
 
 
-![](https://github-visitor-counter-tau.vercel.app/api?username=TSU-MeatSciene)
+
 
 <p align="center"> <img src="https://komarev.com/ghpvc/?username=TSU-MeatScience&label=Profile%20views&color=ce9927&style=flat" alt="GITHUB-USERNAME" /> </p>
